@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PR-Branding Bệnh viện Đa khoa Quốc tế Nam Sài Gòn</title>
+<title>PR-Branding NSG · V10 Netlify</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f4f6fa;--surface:#fff;--ink:#202b40;--navy:#174477;--blue:#2866a5;--muted:#77849a;--line:#e4e9f1;--soft:#edf3fa;--green:#16845f;--amber:#b87912;--red:#c74646;--shadow:0 10px 30px rgba(23,55,91,.07);font-family:Inter,system-ui,sans-serif;color-scheme:light}
@@ -228,14 +228,28 @@ input:focus,select:focus,textarea:focus{outline:2px solid rgba(8,123,199,.18);bo
 .attachment-field{display:flex;flex-direction:column;gap:7px}.attachment-field small{color:var(--muted);font-size:11px}
 @media(max-width:760px){.toolbar #pressSearch{min-width:100%}}
 
+
+.sync-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font-size:10px;font-weight:700;white-space:nowrap;border:1px solid rgba(255,255,255,.2)}
+.sync-pill i{width:7px;height:7px;border-radius:50%;background:#cbd5e1;display:inline-block}
+.sync-pill.saved i{background:#5ee0a0}.sync-pill.saving i,.sync-pill.loading i{background:#ffd166;animation:nsgPulse 1s infinite}
+.sync-pill.error i{background:#ff7777}.sync-pill.offline i{background:#cbd5e1}
+@keyframes nsgPulse{50%{opacity:.35}}
+.sync-setup-note{background:#eaf3fb;border:1px solid #c9dff1;border-radius:12px;padding:12px;color:#244567;font-size:12px;line-height:1.6}
+.sync-setup-note ol{padding-left:20px;margin:8px 0}
+@media(max-width:760px){.sync-pill{font-size:0;padding:8px}.sync-pill i{width:9px;height:9px}.top-actions{gap:5px}}
+
 </style></head>
 <body>
-<section id="auth"><div class="auth-card"><div class="brandmark"><button type="button" class="logo-upload-placeholder" id="authLogo" aria-label="Tải logo bệnh viện"><span>＋</span><small>Tải logo</small></button><div><strong>PR - BRANDING</strong><small>Bệnh viện Đa khoa Quốc tế Nam Sài Gòn</small></div></div><div id="loginPane"><h1>Đăng nhập hệ thống</h1><p class="muted">Sử dụng tài khoản được cấp để truy cập không gian làm việc.</p><div class="field"><label>Email / Tên đăng nhập</label><input id="loginUser" autocomplete="username" placeholder="email@benhviennsg.com"></div><div class="field"><label>Mật khẩu</label><input id="loginPass" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu"></div><button class="btn full" id="loginBtn">Đăng nhập</button><p class="hint" style="margin-top:18px">Lần đầu sử dụng? <a href="#" id="setupLink">Thiết lập tài khoản quản trị</a></p></div><div id="setupPane" class="hidden"><h1>Khởi tạo quản trị viên</h1><p class="muted">Tạo tài khoản đầu tiên cho bản chạy thử trên thiết bị này.</p><div class="field"><label>Email / Tên đăng nhập</label><input id="newUser" placeholder="admin@benhviennsg.com"></div><div class="field"><label>Mật khẩu</label><input id="newPass" type="password" placeholder="Tối thiểu 8 ký tự"></div><div class="field"><label>Nhập lại mật khẩu</label><input id="newPass2" type="password"></div><button class="btn full" id="createAdmin">Tạo tài khoản</button><p class="hint">Lưu ý: đây là đăng nhập demo lưu trên trình duyệt, chưa phải xác thực bảo mật dùng cho môi trường chính thức.</p><p><a href="#" id="backLogin">Quay lại đăng nhập</a></p></div></div></section>
-<div id="app"><aside class="sidebar" id="sidebar"><div class="side-brand"><button type="button" class="logo-upload-placeholder" id="sideLogo" aria-label="Tải logo bệnh viện"><span>＋</span><small>Tải logo</small></button><div><b>PR - BRANDING</b><small>Bệnh viện Đa khoa Quốc tế Nam Sài Gòn</small></div></div><nav class="nav" id="nav"></nav><div class="side-foot">Phiên bản prototype · Dữ liệu trên thiết bị</div></aside><div class="mobile-scrim" id="mobileScrim" aria-hidden="true"></div><main class="main"><header class="topbar"><div class="topbar-left" style="display:flex;align-items:center;gap:12px"><button class="btn secondary mobile-menu" id="menuBtn">☰</button><strong id="topTitle" class="top-title"></strong></div><div class="top-actions"><button class="btn secondary small" id="quickExport">↓ Excel</button><button class="profile" id="profileBtn"><span class="avatar" id="avatar">A</span><span><b id="topUsername">Quản trị viên</b><small id="topRole">Phòng PR - Branding</small></span><span>⌄</span></button></div></header><div class="content" id="view"></div></main></div>
+<section id="auth"><div class="auth-card"><div class="brandmark"><button type="button" class="logo-upload-placeholder" id="authLogo" aria-label="Tải logo bệnh viện"><span>＋</span><small>Tải logo</small></button><div><strong>PR - BRANDING</strong><small>Bệnh viện Đa khoa Quốc tế Nam Sài Gòn</small></div></div><div id="loginPane"><h1>Đăng nhập hệ thống</h1><p class="muted">Sử dụng tài khoản được cấp để truy cập không gian làm việc.</p><div class="field"><label>Email / Tên đăng nhập</label><input id="loginUser" autocomplete="username" placeholder="email@benhviennsg.com"></div><div class="field"><label>Mật khẩu</label><input id="loginPass" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu"></div><button class="btn full" id="loginBtn">Đăng nhập</button><p class="hint" style="margin-top:18px">Lần đầu sử dụng? <a href="#" id="setupLink">Thiết lập tài khoản quản trị</a></p></div><div id="setupPane" class="hidden"><h1>Khởi tạo quản trị viên</h1><p class="muted">Tạo tài khoản quản trị đầu tiên cho hệ thống PR - Branding NSG.</p><div class="field"><label>Mã khởi tạo Netlify</label><input id="setupKey" type="password" autocomplete="off" placeholder="Nhập mã NSG_SETUP_KEY"></div><div class="field"><label>Email quản trị</label><input id="newUser" type="email" autocomplete="username" placeholder="email@benhviennsg.com"></div><div class="field"><label>Mật khẩu</label><input id="newPass" type="password" autocomplete="new-password" placeholder="Tối thiểu 10 ký tự"></div><div class="field"><label>Nhập lại mật khẩu</label><input id="newPass2" type="password" autocomplete="new-password"></div><button class="btn full" id="createAdmin">Tạo tài khoản quản trị</button><p class="hint">Mã khởi tạo được thiết lập trong Netlify Environment Variables và không lưu trong HTML.</p><p><a href="#" id="backLogin">Quay lại đăng nhập</a></p></div></div></section>
+<div id="app"><aside class="sidebar" id="sidebar"><div class="side-brand"><button type="button" class="logo-upload-placeholder" id="sideLogo" aria-label="Tải logo bệnh viện"><span>＋</span><small>Tải logo</small></button><div><b>PR - BRANDING</b><small>Bệnh viện Đa khoa Quốc tế Nam Sài Gòn</small></div></div><nav class="nav" id="nav"></nav><div class="side-foot">PR-Branding NSG · Dữ liệu đồng bộ</div></aside><div class="mobile-scrim" id="mobileScrim" aria-hidden="true"></div><main class="main"><header class="topbar"><div class="topbar-left" style="display:flex;align-items:center;gap:12px"><button class="btn secondary mobile-menu" id="menuBtn">☰</button><strong id="topTitle" class="top-title"></strong></div><div class="top-actions"><span id="syncStatus" class="sync-pill"><i></i><span>Chưa kết nối</span></span><button class="btn secondary small" id="quickExport">↓ Excel</button><button class="profile" id="profileBtn"><span class="avatar" id="avatar">A</span><span><b id="topUsername">Quản trị viên</b><small id="topRole">Phòng PR - Branding</small></span><span>⌄</span></button></div></header><div class="content" id="view"></div></main></div>
 <input type="file" id="globalLogoUpload" accept="image/png,image/jpeg,image/webp" class="hidden"><div class="modal hidden" id="modal"><div class="modal-box"><div class="modal-head"><h3 id="modalTitle">Thông tin</h3><button class="icon-btn" id="modalClose">✕</button></div><div id="modalBody"></div></div></div>
 <input type="file" id="excelFile" accept=".csv,.xlsx,.xls" class="hidden">
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
+const WORKSPACE_ID = "nsg-pr-branding-main";
+const API_BASE='/.netlify/functions/api';
+let cloudUser=null,cloudReady=false,cloudApplying=false,cloudDirty=false,cloudSaving=false;
+let cloudSnapshot=null,cloudVersions={},cloudSaveTimer=null,cloudPollTimer=null,cloudChangeCounter=0;
 const STORE='nsg_pr_branding_v2';
 const modules={projects:{title:'Dự án',icon:'🗂',desc:'Danh mục và tiến độ các dự án PR - Branding.',fields:[['name','Tên dự án','text'],['type','Nhóm dự án','select','PR - Branding|Sponsorship|Partner|OOH|Vật phẩm & quà tặng|Campaign|Khác'],['owner','Phụ trách','text'],['status','Trạng thái','select','Lên kế hoạch|Đang triển khai|Hoàn thành|Tạm dừng'],['start','Ngày bắt đầu','date'],['due','Deadline','date'],['budget','Ngân sách dự kiến','number'],['note','Ghi chú','textarea']]},tasks:{title:'Công việc & Tiến độ',icon:'☑',desc:'Theo dõi đầu việc, người phụ trách, deadline và kết quả hằng ngày.',fields:[['name','Tên công việc','text'],['project','Dự án liên quan','text'],['owner','Người thực hiện','text'],['status','Trạng thái','select','Chưa bắt đầu|Đang thực hiện|Chờ duyệt|Hoàn thành|Trễ hạn'],['priority','Ưu tiên','select','Thấp|Trung bình|Cao|Khẩn'],['start','Ngày thực hiện','date'],['due','Deadline','date'],['completedDate','Ngày hoàn thành','date'],['doneNote','Kết quả / ghi chú hoàn thành','textarea']]},calendar:{title:'Lịch công việc',icon:'🗓',desc:'Lịch công việc, lịch họp, sự kiện và deadline; hỗ trợ xuất lịch .ICS để thêm vào lịch điện thoại.',fields:[['title','Tiêu đề','text'],['kind','Loại lịch','select','Công việc|Cuộc họp|Sự kiện|Deadline'],['date','Ngày','date'],['time','Giờ','time'],['end','Kết thúc','time'],['owner','Người tham gia / phụ trách','text'],['project','Dự án liên quan','text'],['note','Ghi chú / địa điểm','textarea']]},budget:{title:'Ngân sách & Thanh toán',icon:'💰',desc:'Theo dõi ngân sách kế hoạch, chi phí thực tế theo hạng mục và nhiều đợt thanh toán.',fields:[['name','Hạng mục / hợp đồng','text'],['project','Dự án liên quan','text'],['partner','Đối tác / nhà cung cấp','text'],['kind','Loại giao dịch','select','Ngân sách kế hoạch|Chi phí thực tế|Hợp đồng|Nghiệm thu|Thanh toán|Đối trừ dịch vụ'],['costType','Nhóm chi phí','select','Nhân sự|Ăn uống|Vật tư y tế|Vật tư sự kiện|Tăng ca|Vận chuyển|Sản xuất|Truyền thông|Khác'],['planned','Ngân sách theo kế hoạch (VNĐ)','number'],['amount','Chi phí thực tế / giá trị hồ sơ (VNĐ)','number'],['paymentRound','Đợt thanh toán','select','Đợt 1|Đợt 2|Đợt 3|Đợt 4|Đợt 5|Quyết toán'],['paid','Giá trị thanh toán đợt này (VNĐ)','number'],['date','Ngày phát sinh / thanh toán','date'],['status','Trạng thái','select','Dự kiến|Đang triển khai|Chờ hồ sơ|Chờ thanh toán|Đã thanh toán|Đã đối trừ'],['note','Ghi chú','textarea']]},content:{title:'Truyền thông',icon:'📰',desc:'Quản lý kế hoạch sản xuất, tiến độ và sản lượng nội dung đã đăng tải kèm đường dẫn sản phẩm.',fields:[['name','Tên nội dung / tiêu đề','text'],['format','Định dạng','select','Bài PR|Bài báo|Bài social|Video|Livestream|Ảnh|Banner|Thông cáo báo chí|Khác'],['channel','Kênh / đơn vị đăng tải','select','Báo Thanh Niên|Báo Dân Trí|Website bệnh viện|Facebook|TikTok|YouTube|Zalo OA|Màn hình / Banner|Khác'],['project','Dự án / chiến dịch','text'],['owner','Phụ trách','text'],['productionPlan','Kế hoạch sản xuất','date'],['productionStatus','Tiến độ sản xuất','select','Chưa thực hiện|Đang sản xuất|Chờ duyệt|Cần chỉnh sửa|Hoàn tất'],['publish','Ngày đăng tải','date'],['status','Trạng thái đăng tải','select','Chưa đăng|Đã đăng|Đã gỡ'],['url','Link sản phẩm đã đăng','url'],['bannerImpressions','Banner - lượt hiển thị','number'],['bannerClicks','Banner - lượt nhấp','number'],['ga4Users','GA4 - người dùng','number'],['ga4Sessions','GA4 - phiên','number'],['ga4Views','GA4 - lượt xem trang','number'],['note','Ghi chú','textarea']]},reports:{title:'Report hiệu quả',icon:'📊',desc:'Tổng hợp hiệu quả truyền thông theo dự án, kênh và sản phẩm từ dữ liệu đã nhập.',fields:[]},inventory:{title:'Kho Marketing',icon:'🎁',desc:'Quản lý tồn kho quà tặng, vật phẩm, nhập - xuất và tồn khả dụng.',fields:[['name','Tên vật phẩm','text'],['sku','Mã vật phẩm','text'],['group','Nhóm','select','Quà tặng|Vật phẩm sự kiện|Ấn phẩm|Đồng phục|Khác'],['unit','Đơn vị tính','text'],['opening','Tồn đầu kỳ','number'],['in','Nhập kho','number'],['out','Đã xuất','number'],['min','Tồn tối thiểu','number'],['location','Vị trí lưu kho','text'],['note','Ghi chú','textarea']]},partners:{title:'Sự kiện',icon:'🎪',desc:'Tổng quan các sự kiện Branding, Sponsorship và hoạt động nội bộ của bệnh viện.',fields:[['name','Tên sự kiện','text'],['type','Nhóm sự kiện','select','Branding|Sponsorship|Đối ngoại|Nội bộ|Hội thảo / Tọa đàm|Hoạt động cộng đồng|Khác'],['format','Hình thức','select','Tài trợ|Đồng tổ chức|Bệnh viện tổ chức|Tham gia|Khác'],['owner','Đầu mối phụ trách','text'],['project','Dự án / chiến dịch liên quan','text'],['date','Ngày diễn ra','date'],['location','Địa điểm','text'],['status','Trạng thái','select','Lên kế hoạch|Đang chuẩn bị|Đã xác nhận|Đang diễn ra|Hoàn tất|Tạm hoãn'],['budget','Ngân sách dự kiến (VNĐ)','number'],['note','Nội dung / quyền lợi / ghi chú','textarea']]}}
 
@@ -328,8 +342,8 @@ modules.pressCoverage = {
  ]
 };
 
-let state={user:null,profile:{},logo:'',data:{},logs:[],history:[],shares:[],view:'dashboard',calMode:'month',calDate:new Date(),filter:''};
-function read(){try{let x=JSON.parse(localStorage.getItem(STORE)||'{}');state.data=x.data||{};if(state.data.content){state.data.content=state.data.content.map(o=>({...o,productionStatus:o.productionStatus||'Chưa thực hiện',pageViews:o.pageViews??o.specialPageViews??0,contentViews:o.contentViews??0,bannerCTR:o.bannerCTR??o.specialPageCTR??0,bannerViews:o.bannerViews??o.bannerImpressions??0}));}if(state.data.output&&(!state.data.content||!state.data.content.length)){state.data.content=state.data.output.map(o=>({...o,productionStatus:'Hoàn tất',status:o.status||'Đã đăng',pageViews:o.specialPageViews||0,contentViews:o.contentViews||0,bannerCTR:o.bannerCTR||0,bannerViews:o.bannerViews||o.specialPageImpressions||0}));}state.logs=x.logs||[];state.history=x.history||[];state.shares=x.shares||[];
+let state={user:null,userRole:null,profile:{},logo:'',data:{},logs:[],history:[],shares:[],view:'dashboard',calMode:'month',calDate:new Date(),filter:''};
+function read(){try{let x=JSON.parse(localStorage.getItem(STORE)||'{}');state.data=x.data||{};if(state.data.content){state.data.content=state.data.content.map(o=>({...o,productionStatus:o.productionStatus||'Chưa thực hiện',pageViews:o.pageViews??o.specialPageViews??0,contentViews:o.contentViews??0,bannerCTR:o.bannerCTR??o.specialPageCTR??0,bannerViews:o.bannerViews??o.bannerImpressions??0}));}if(state.data.output&&(!state.data.content||!state.data.content.length)){state.data.content=state.data.output.map(o=>({...o,productionStatus:'Hoàn tất',status:o.status||'Đã đăng',pageViews:o.specialPageViews||0,contentViews:o.contentViews||0,bannerCTR:o.bannerCTR||0,bannerViews:o.bannerViews||o.specialPageImpressions||0}));}state.logs=x.logs||[];state.history=(x.history||[]).map((h,i)=>({...h,id:h.id||('audit_legacy_'+(h.ts||Date.now())+'_'+i)}));state.shares=x.shares||[];
 if((!state.data.pressCoverage||!state.data.pressCoverage.length)&&state.data.content?.length){
  state.data.pressCoverage=state.data.content.filter(o=>o.url||o.publish).map(o=>({
   id:'press_migrated_'+(o.id||Date.now()),title:o.name||'',url:o.url||'',publishDate:o.publish||'',
@@ -337,14 +351,86 @@ if((!state.data.pressCoverage||!state.data.pressCoverage.length)&&state.data.con
   note:'Tự chuyển từ dữ liệu sản xuất nội dung phiên bản trước.'
  }));
 }state.profile=x.profile||{};state.logo=x.logo||'';return x}catch(e){return {}}}
-function persist(){localStorage.setItem(STORE,JSON.stringify({data:state.data,logs:state.logs.slice(0,100),history:state.history.slice(0,500),shares:state.shares,profile:state.profile,logo:state.logo}))}
+function persist(){
+ const payload={data:state.data,logs:state.logs.slice(0,100),history:state.history.slice(0,500),shares:state.shares,profile:state.profile,logo:state.logo};
+ try{localStorage.setItem(STORE,JSON.stringify(payload));}catch(e){setSyncStatus('local-error','Không lưu được bộ nhớ thiết bị');}
+ if(cloudReady&&!cloudApplying){cloudDirty=true;cloudChangeCounter++;scheduleCloudSync();}
+}
 function rows(k){return state.data[k]||(state.data[k]=[])}function log(s){state.logs.unshift({text:s,at:new Date().toLocaleString('vi-VN')});persist()}
 function auditChange(moduleName,recordId,recordName,field,oldValue,newValue){
  if(String(oldValue??'')===String(newValue??''))return;
  let now=Date.now(),last=state.history[0];
  if(last&&last.module===moduleName&&last.recordId===recordId&&last.field===field&&now-last.ts<2000){last.newValue=String(newValue??'');last.at=new Date().toLocaleString('vi-VN');last.ts=now;}
- else state.history.unshift({module:moduleName,recordId,recordName,field,oldValue:String(oldValue??''),newValue:String(newValue??''),user:state.profile.name||state.user||'Người dùng',at:new Date().toLocaleString('vi-VN'),ts:now});
+ else state.history.unshift({id:'audit_'+now+'_'+Math.random().toString(36).slice(2,9),module:moduleName,recordId,recordName,field,oldValue:String(oldValue??''),newValue:String(newValue??''),user:state.profile.name||state.user||'Người dùng',at:new Date().toLocaleString('vi-VN'),ts:now});
+
  state.history=state.history.slice(0,500);
+}
+function setSyncStatus(kind,label){
+ const el=document.getElementById('syncStatus');if(!el)return;
+ el.className='sync-pill '+kind;el.innerHTML=`<i></i><span>${esc(label)}</span>`;
+}
+function cloneJSON(x){return JSON.parse(JSON.stringify(x??{}))}
+async function apiRequest(action,payload={},method='GET'){
+ const opts={method,credentials:'same-origin',headers:{}};
+ if(method!=='GET'){opts.headers['Content-Type']='application/json';opts.body=JSON.stringify(payload);}
+ const res=await fetch(`${API_BASE}?action=${encodeURIComponent(action)}`,opts);
+ let body={};try{body=await res.json()}catch(e){}
+ if(!res.ok||body.ok===false){let err=new Error(body.error||`Lỗi máy chủ (${res.status})`);err.status=res.status;throw err;}
+ return body;
+}
+function localStateBundle(){return {data:cloneJSON(state.data),meta:{logo:state.logo||'',logs:state.logs||[],shares:state.shares||[]},profile:cloneJSON(state.profile),history:cloneJSON(state.history)}}
+function indexRecords(data){let out={};Object.entries(data||{}).forEach(([m,arr])=>{out[m]={};(arr||[]).forEach(o=>{if(o&&o.id)out[m][String(o.id)]=o;});});return out}
+function scheduleCloudSync(){
+ if(!cloudReady)return;
+ clearTimeout(cloudSaveTimer);setSyncStatus('saving','Đang lưu…');
+ cloudSaveTimer=setTimeout(()=>syncCloudNow().catch(e=>{console.error(e);setSyncStatus('error','Chưa đồng bộ · '+(e.message||'lỗi'));}),700);
+}
+async function syncCloudNow(){
+ if(!cloudReady||cloudSaving)return;
+ cloudSaving=true;cloudDirty=true;const counterAtStart=cloudChangeCounter;
+ try{
+  const current=localStateBundle(),cur=indexRecords(current.data),base=indexRecords(cloudSnapshot?.data||{}),changes=[],deletes=[];
+  for(const [module,records] of Object.entries(cur))for(const [id,payload] of Object.entries(records)){
+   if(JSON.stringify(base[module]?.[id])!==JSON.stringify(payload))changes.push({module,id,payload,expectedVersion:cloudVersions[module]?.[id]??null});
+  }
+  for(const [module,records] of Object.entries(base))for(const id of Object.keys(records))if(!cur[module]?.[id])deletes.push({module,id,expectedVersion:cloudVersions[module]?.[id]??null});
+  const oldMeta=cloudSnapshot?.meta||{},oldProfile=cloudSnapshot?.profile||{},oldHistory=cloudSnapshot?.history||[];
+  const oldHistoryById=new Map(oldHistory.filter(x=>x.id).map(x=>[x.id,x]));
+  const newHistory=(current.history||[]).filter(x=>!x.id||!oldHistoryById.has(x.id)||JSON.stringify(oldHistoryById.get(x.id))!==JSON.stringify(x));
+  const metaChanged=JSON.stringify(current.meta)!==JSON.stringify(oldMeta),profileChanged=JSON.stringify(current.profile)!==JSON.stringify(oldProfile);
+  if(!changes.length&&!deletes.length&&!metaChanged&&!profileChanged&&!newHistory.length){cloudDirty=cloudChangeCounter!==counterAtStart;setSyncStatus('saved','Đã đồng bộ');return;}
+  const result=await apiRequest('sync',{changes,deletes,meta:metaChanged?current.meta:null,profile:profileChanged?current.profile:null,history:newHistory},'POST');
+  changes.forEach(c=>{cloudSnapshot.data[c.module]=cloudSnapshot.data[c.module]||[];let a=cloudSnapshot.data[c.module],i=a.findIndex(x=>String(x.id)===c.id);if(i>=0)a[i]=cloneJSON(c.payload);else a.push(cloneJSON(c.payload));cloudVersions[c.module]=cloudVersions[c.module]||{};cloudVersions[c.module][c.id]=result.versions?.[`${c.module}:${c.id}`]??((cloudVersions[c.module][c.id]||0)+1);});
+  deletes.forEach(d=>{cloudSnapshot.data[d.module]=(cloudSnapshot.data[d.module]||[]).filter(x=>String(x.id)!==d.id);if(cloudVersions[d.module])delete cloudVersions[d.module][d.id];});
+  if(metaChanged)cloudSnapshot.meta=cloneJSON(current.meta);if(profileChanged)cloudSnapshot.profile=cloneJSON(current.profile);
+  cloudSnapshot.history=[...(cloudSnapshot.history||[]),...newHistory].slice(-500);
+  cloudDirty=cloudChangeCounter!==counterAtStart;persistLocalOnly();setSyncStatus('saved','Đã đồng bộ');
+ }catch(e){
+  if(e.status===409){try{localStorage.setItem(STORE+'_conflict_draft',JSON.stringify(localStateBundle()));}catch(_){}cloudDirty=false;setSyncStatus('conflict','Có xung đột dữ liệu');alert((e.message||'Bản ghi đã thay đổi trên thiết bị khác.')+' Bản nháp trên thiết bị này đã được lưu tạm. Hệ thống sẽ tải dữ liệu mới nhất.');try{applyCloudSnapshot(await apiRequest('snapshot'));render()}catch(_){}return;}
+  throw e;
+ }finally{cloudSaving=false;if(cloudDirty&&cloudReady)scheduleCloudSync();}
+}
+function persistLocalOnly(){try{localStorage.setItem(STORE,JSON.stringify({data:state.data,logs:state.logs.slice(0,100),history:state.history.slice(0,500),shares:state.shares,profile:state.profile,logo:state.logo}));}catch(e){console.warn(e)}}
+function applyCloudSnapshot(snap){
+ cloudApplying=true;state.data=snap.data||{};state.logo=snap.meta?.logo||'';state.logs=snap.meta?.logs||[];state.shares=snap.meta?.shares||[];state.history=snap.history||[];state.profile=snap.profile||{};cloudVersions=snap.versions||{};
+ cloudSnapshot={data:cloneJSON(state.data),meta:{logo:state.logo,logs:state.logs,shares:state.shares},profile:cloneJSON(state.profile),history:cloneJSON(state.history)};cloudApplying=false;updateLogo();updateProfile();persistLocalOnly();
+}
+async function startCloudSync(){
+ setSyncStatus('loading','Đang tải dữ liệu…');const local=localStateBundle(),snap=await apiRequest('snapshot');
+ const hasCloud=Object.values(snap.data||{}).some(a=>Array.isArray(a)&&a.length)||!!snap.meta?.logo;
+ const hasLocal=Object.values(local.data||{}).some(a=>Array.isArray(a)&&a.length)||!!local.meta.logo||(local.meta.logs||[]).length>0||(local.history||[]).length>0||Object.keys(local.profile||{}).length>0;
+ if(!hasCloud&&hasLocal){
+  if(confirm('Database dùng chung chưa có dữ liệu. Phát hiện dữ liệu đang lưu trên trình duyệt này. Bạn có muốn chuyển dữ liệu hiện tại lên hệ thống dùng chung không?')){
+   state.data=local.data;state.logo=local.meta.logo;state.logs=local.meta.logs;state.shares=local.meta.shares;state.profile=local.profile;state.history=local.history;cloudVersions={};cloudSnapshot={data:{},meta:{logo:'',logs:[],shares:[]},profile:{},history:[]};cloudReady=true;cloudDirty=true;cloudChangeCounter++;await syncCloudNow();
+  }else{try{localStorage.setItem(STORE+'_precloud_backup',JSON.stringify(local));}catch(_){}applyCloudSnapshot(snap);}
+ }else applyCloudSnapshot(snap);
+ cloudReady=true;cloudDirty=false;clearInterval(cloudPollTimer);cloudPollTimer=setInterval(pollCloudChanges,5000);setSyncStatus('saved','Đã đồng bộ');state.view='dashboard';nav();render();
+}
+async function pollCloudChanges(){
+ if(!cloudReady||cloudDirty||cloudSaving)return;
+ try{const snap=await apiRequest('snapshot'),remote={data:snap.data||{},meta:{logo:snap.meta?.logo||'',logs:snap.meta?.logs||[],shares:snap.meta?.shares||[]},profile:snap.profile||{},history:snap.history||[]};
+  if(JSON.stringify(remote.data)!==JSON.stringify(cloudSnapshot?.data||{})||JSON.stringify(remote.meta)!==JSON.stringify(cloudSnapshot?.meta||{})||JSON.stringify(remote.profile)!==JSON.stringify(cloudSnapshot?.profile||{})||JSON.stringify(remote.history)!==JSON.stringify(cloudSnapshot?.history||[])){applyCloudSnapshot(snap);render();setSyncStatus('saved','Đã cập nhật dữ liệu mới');}else setSyncStatus('saved','Đã đồng bộ');
+ }catch(e){console.warn(e);setSyncStatus('error','Mất kết nối đồng bộ');}
 }
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function dateKeyLocal(d){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
@@ -382,7 +468,9 @@ function editRecord(k,id){
  form.querySelectorAll('input[data-attachment]').forEach(input=>input.addEventListener('change',e=>{
   let file=e.target.files[0];if(!file)return;
   if(file.size>2*1024*1024){alert('File tối đa 2 MB ở phiên bản HTML này. Với file lớn hơn nên dùng link Google Drive/SharePoint.');e.target.value='';return}
-  let reader=new FileReader();reader.onload=()=>{let before=obj.attachment?.name||'',attachment={name:file.name,type:file.type,data:reader.result};if(isNew){obj={id:k+'_'+Date.now()};rows(k).unshift(obj);isNew=false;}obj.attachment=attachment;auditChange(m.title,obj.id,obj.name||obj.title||'Bản ghi mới','File đính kèm',before,file.name);persist();saveState.textContent='Đã tự động lưu file · '+new Date().toLocaleTimeString('vi-VN');};reader.readAsDataURL(file);
+  let before=obj.attachment?.name||'';
+  if(isNew){obj={id:k+'_'+Date.now()};rows(k).unshift(obj);isNew=false;}
+  let reader=new FileReader();reader.onload=()=>{obj.attachment={name:file.name,type:file.type,data:reader.result};auditChange(m.title,obj.id,obj.name||obj.title||'Bản ghi mới','File đính kèm',before,file.name);persist();saveState.textContent='File đã lưu và đang đồng bộ…';};reader.readAsDataURL(file);
  }));
  form.onsubmit=e=>{e.preventDefault();if(isNew){obj={id:k+'_'+Date.now()};m.fields.forEach(f=>{if(f[2]==='attachment'){obj[f[0]]=obj[f[0]]||null;}else if(form.elements[f[0]])obj[f[0]]=form.elements[f[0]].value;});rows(k).unshift(obj);log('Thêm mới '+m.title+': '+(obj.name||obj.title||''));}else log('Đã cập nhật '+m.title+': '+(obj.name||obj.title||''));persist();closeModal();render()};
 }
@@ -446,6 +534,7 @@ function removeShare(i){state.shares.splice(i,1);persist();render()}
 function shareItem(k,id){let scope=modules[k].title+(id?' · mục dữ liệu':'');showModal('Chia sẻ: '+scope,`<p class="section-note">Chọn email và quyền. Đây là cấu hình minh họa trên thiết bị hiện tại; chưa gửi lời mời thật.</p><form id="shareOne"><div class="field"><label>Email</label><input type="email" name="email" required></div><div class="field"><label>Quyền</label><select name="permission"><option>Viewer</option><option>Commenter</option><option>Editor</option></select></div><div class="actions" style="justify-content:flex-end"><button type="button" class="btn ghost" onclick="closeModal()">Hủy</button><button class="btn">Lưu</button></div></form>`);document.getElementById('shareOne').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target);state.shares.push({email:f.get('email'),permission:f.get('permission'),scope,note:'Chia sẻ nhanh'});persist();closeModal();alert('Đã lưu cấu hình demo. Để người khác truy cập cần triển khai backend.')}}
 function settings(v){
  v.innerHTML=`<div class="page-head"><div><h1>Cài đặt & dữ liệu</h1><p>Hồ sơ cá nhân, lịch sử điều chỉnh và sao lưu dữ liệu.</p></div></div>
+ ${state.userRole==='admin'?`<h2>Quản lý tài khoản nhân sự</h2><div class="card"><p class="section-note">Chỉ quản trị viên mới được tạo tài khoản đăng nhập cho nhân sự.</p><form id="createUserForm" class="form-grid"><div class="field"><label>Email nhân sự</label><input name="email" type="email" required placeholder="nhansu@benhviennsg.com"></div><div class="field"><label>Mật khẩu khởi tạo</label><input name="password" type="password" required minlength="10" placeholder="Tối thiểu 10 ký tự"></div><div class="field"><label>Vai trò</label><select name="role"><option value="member">Nhân sự</option><option value="admin">Quản trị viên</option></select></div><div class="field" style="align-self:end"><button class="btn" type="submit">＋ Tạo tài khoản</button></div></form><div id="userAdminMessage" class="save-state"></div></div>`:''}
  <div class="grid two"><div class="card"><h3>Hồ sơ cá nhân</h3><form id="profileForm">
  <div class="field"><label>Họ và tên</label><input name="name" value="${esc(state.profile.name||'')}" required></div>
  <div class="field"><label>Chức vụ</label><input name="job" value="${esc(state.profile.job||'')}"></div>
@@ -456,14 +545,14 @@ function settings(v){
  <p class="section-note">Tải logo hình vuông (PNG/JPG/WebP). Logo hiển thị đồng nhất tại màn hình đăng nhập và ứng dụng.</p>
  <div class="actions" style="align-items:center"><button type="button" id="logoPreview" class="logo-upload-placeholder preview" aria-label="Logo bệnh viện"><span>＋</span><small>Logo</small></button><input type="file" id="logoUpload" accept="image/png,image/jpeg,image/webp" style="max-width:240px"></div>
  <button type="button" class="btn secondary small" id="removeLogo" style="margin-top:10px">Gỡ logo</button></div>
- <div class="card"><h3>Lưu trữ & sao lưu</h3><p class="section-note">Mỗi thay đổi được lưu tự động trên thiết bị hiện tại. Hãy sao lưu định kỳ để tránh mất dữ liệu khi đổi trình duyệt hoặc thiết bị.</p>
+ <div class="card"><h3>Lưu trữ & sao lưu</h3><p class="section-note">Mỗi thay đổi được lưu tự động lên Netlify Database và đồng bộ giữa các thiết bị khi có kết nối internet.</p>
  <div class="actions"><button class="btn" onclick="backupJSON()">↓ Sao lưu toàn bộ (JSON)</button><button class="btn secondary" onclick="document.getElementById('restoreFile').click()">↑ Khôi phục JSON</button><input type="file" id="restoreFile" accept=".json" class="hidden"></div>
- <div class="sync-warning" style="margin-top:18px"><b>Đồng bộ nhiều người dùng</b><p class="section-note">Chưa kết nối máy chủ chung. Chia sẻ file HTML không tự chia sẻ dữ liệu; cần triển khai cơ sở dữ liệu tập trung và xác thực người dùng để mọi người thấy dữ liệu mới nhất.</p></div>
+ <div class="sync-warning" style="margin-top:18px"><b>Đồng bộ dữ liệu dùng chung</b><p class="section-note">Đang sử dụng Netlify Database. Dữ liệu được đồng bộ giữa các thiết bị đăng nhập cùng workspace; trạng thái “Đã đồng bộ” xác nhận máy chủ đã nhận dữ liệu.</p></div>
  <hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><button class="btn danger" onclick="logout()">Đăng xuất</button></div></div>
  <h2>Lịch sử điều chỉnh gần đây</h2><div class="card table-wrap"><table><thead><tr><th>Thời gian</th><th>Người thực hiện</th><th>Phân hệ</th><th>Nội dung</th><th>Trước khi sửa</th><th>Sau khi sửa</th></tr></thead><tbody>
  ${state.history.length?state.history.slice(0,100).map(x=>`<tr><td>${esc(x.at)}</td><td>${esc(x.user)}</td><td>${esc(x.module)}</td><td>${esc(x.recordName)} · ${esc(x.field)}</td><td>${esc(x.oldValue||'—')}</td><td>${esc(x.newValue||'—')}</td></tr>`).join(''):'<tr><td colspan="6"><div class="empty">Chưa có lịch sử điều chỉnh.</div></td></tr>'}</tbody></table></div>
  <input type="file" id="restoreFile" accept=".json" class="hidden">
- <h2>Kết nối hệ thống</h2><div class="grid three"><div class="card"><b>Đăng nhập & phân quyền</b><p class="section-note">Cần xác thực phía máy chủ và kiểm soát quyền ở backend.</p></div><div class="card"><b>Lịch & nhắc việc</b><p class="section-note">Có thể kết nối Google Calendar hoặc Microsoft Graph; Apple Calendar nhận lịch .ics.</p></div><div class="card"><b>Dữ liệu dùng chung</b><p class="section-note">Cần database tập trung, nhật ký thay đổi và phân quyền theo dự án / phân hệ.</p></div></div>`;
+ <h2>Kết nối hệ thống</h2><div class="grid three"><div class="card"><b>Đăng nhập & phân quyền</b><p class="section-note">Tài khoản được xác thực phía máy chủ; quản trị viên có thể cấp tài khoản đăng nhập.</p></div><div class="card"><b>Lịch & nhắc việc</b><p class="section-note">Có thể kết nối Google Calendar hoặc Microsoft Graph; Apple Calendar nhận lịch .ics.</p></div><div class="card"><b>Dữ liệu dùng chung</b><p class="section-note">Dữ liệu đang lưu trên Netlify Database, có nhật ký điều chỉnh và đồng bộ đa thiết bị.</p></div></div>`;
  let pf=document.getElementById('profileForm'),saveTimer;
  pf.addEventListener('input',e=>{
    if(!e.target.name)return;
@@ -475,6 +564,7 @@ function settings(v){
  });
  pf.onsubmit=e=>{e.preventDefault();persist();alert('Hồ sơ đã được lưu tự động.')};
  document.getElementById('restoreFile').onchange=restoreJSON;updateLogo();
+ const createUserForm=document.getElementById('createUserForm');if(createUserForm)createUserForm.onsubmit=async e=>{e.preventDefault();const fd=new FormData(createUserForm);try{await apiRequest('create-user',{email:fd.get('email'),password:fd.get('password'),role:fd.get('role')},'POST');createUserForm.reset();document.getElementById('userAdminMessage').textContent='Đã tạo tài khoản. Nhân sự có thể đăng nhập bằng email và mật khẩu được cấp.';}catch(err){document.getElementById('userAdminMessage').textContent=err.message||'Không tạo được tài khoản.';}};
  document.getElementById('logoUpload').onchange=e=>{setLogoFile(e.target.files[0]);e.target.value=''};
  document.getElementById('removeLogo').onclick=()=>{state.logo='';persist();updateLogo();settings(document.getElementById('view'))};
 }
@@ -485,7 +575,7 @@ function updateLogo(){
    if(state.logo)el.outerHTML=`<img id="${id}" class="logo-img ${id==='logoPreview'?'preview':''}" src="${state.logo}" alt="Logo bệnh viện" title="Nhấn để thay đổi logo">`;
    else el.outerHTML=logoPlaceholder(id);
    let node=document.getElementById(id);
-   if(node)node.onclick=()=>{if(localStorage.getItem('nsg_auth'))go('dashboard')};
+   if(node)node.onclick=()=>{go('dashboard')};
  });
 }
 function setLogoFile(file){
@@ -515,17 +605,32 @@ function downloadCSV(k){let m=modules[k],data=rows(k),headers=m.fields.map(f=>f[
 function parseCSV(text){let rows=[],row=[],cell='',q=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'&&q&&n==='"'){cell+='"';i++}else if(c==='"')q=!q;else if(c===','&&!q){row.push(cell);cell=''}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&n==='\n')i++;row.push(cell);if(row.some(x=>x!==''))rows.push(row);row=[];cell=''}else cell+=c}row.push(cell);if(row.some(x=>x!==''))rows.push(row);return rows}
 document.getElementById('excelFile').onchange=async e=>{let file=e.target.files[0],k=e.target.dataset.module;if(!file)return;let m=modules[k],parsed;if(/\.xlsx?$|\.xls$/i.test(file.name)){if(!window.XLSX){alert('Không tải được thư viện Excel. Hãy thử lại khi có kết nối internet hoặc nhập CSV UTF-8.');e.target.value='';return}let buf=await file.arrayBuffer(),wb=XLSX.read(buf,{type:'array'}),sheet=wb.Sheets[wb.SheetNames[0]];parsed=XLSX.utils.sheet_to_json(sheet,{header:1,defval:''})}else{parsed=parseCSV(await file.text())}let head=(parsed.shift()||[]).map(x=>String(x).trim().toLowerCase()),map=m.fields.map(f=>head.indexOf(f[1].toLowerCase())>=0?head.indexOf(f[1].toLowerCase()):head.indexOf(f[0].toLowerCase()));let added=0;parsed.forEach(r=>{let o={id:k+'_'+Date.now()+'_'+Math.random().toString(16).slice(2)};m.fields.forEach((f,i)=>o[f[0]]=map[i]>=0?r[map[i]]||'':'');if(m.fields.some(f=>o[f[0]])) {rows(k).push(o);added++}});persist();log('Nhập '+added+' dòng vào '+m.title);render();alert('Đã nhập '+added+' dòng. Vui lòng kiểm tra lại dữ liệu.');e.target.value=''};
 function backupJSON(){downloadBlob(JSON.stringify({data:state.data,logs:state.logs,history:state.history,shares:state.shares,profile:state.profile,logo:state.logo},null,2),'NSG_PR_Branding_backup.json','application/json')}
-function restoreJSON(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);state.data=x.data||{};if(state.data.content){state.data.content=state.data.content.map(o=>({...o,productionStatus:o.productionStatus||'Chưa thực hiện',pageViews:o.pageViews??o.specialPageViews??0,contentViews:o.contentViews??0,bannerCTR:o.bannerCTR??o.specialPageCTR??0,bannerViews:o.bannerViews??o.bannerImpressions??0}));}if(state.data.output&&(!state.data.content||!state.data.content.length)){state.data.content=state.data.output.map(o=>({...o,productionStatus:'Hoàn tất',status:o.status||'Đã đăng',pageViews:o.specialPageViews||0,contentViews:o.contentViews||0,bannerCTR:o.bannerCTR||0,bannerViews:o.bannerViews||o.specialPageImpressions||0}));}state.logs=x.logs||[];state.history=x.history||[];state.shares=x.shares||[];state.profile=x.profile||{};state.logo=x.logo||'';persist();updateLogo();render();alert('Đã khôi phục dữ liệu.')}catch(err){alert('File JSON không hợp lệ.')}};r.readAsText(f)}
-function logout(){state.user=null;localStorage.removeItem('nsg_session');document.getElementById('app').style.display='none';document.getElementById('auth').style.display='grid';document.getElementById('loginPass').value=''}
-function login(){let u=document.getElementById('loginUser').value.trim().toLowerCase(),p=document.getElementById('loginPass').value;let account=JSON.parse(localStorage.getItem('nsg_auth')||'null');if(!account){alert('Chưa có tài khoản. Vui lòng thiết lập tài khoản quản trị trước.');return}if(u!==account.user||p!==account.pass){alert('Email/tên đăng nhập hoặc mật khẩu chưa chính xác.');return}state.user=u;localStorage.setItem('nsg_session',u);read();state.view='dashboard';document.getElementById('auth').style.display='none';document.getElementById('app').style.display='block';nav();updateProfile();render()}
+function restoreJSON(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);state.data=x.data||{};if(state.data.content){state.data.content=state.data.content.map(o=>({...o,productionStatus:o.productionStatus||'Chưa thực hiện',pageViews:o.pageViews??o.specialPageViews??0,contentViews:o.contentViews??0,bannerCTR:o.bannerCTR??o.specialPageCTR??0,bannerViews:o.bannerViews??o.bannerImpressions??0}));}if(state.data.output&&(!state.data.content||!state.data.content.length)){state.data.content=state.data.output.map(o=>({...o,productionStatus:'Hoàn tất',status:o.status||'Đã đăng',pageViews:o.specialPageViews||0,contentViews:o.contentViews||0,bannerCTR:o.bannerCTR||0,bannerViews:o.bannerViews||o.specialPageImpressions||0}));}state.logs=x.logs||[];state.history=(x.history||[]).map((h,i)=>({...h,id:h.id||('audit_legacy_'+(h.ts||Date.now())+'_'+i)}));state.shares=x.shares||[];state.profile=x.profile||{};state.logo=x.logo||'';persist();updateLogo();render();alert('Đã khôi phục dữ liệu.')}catch(err){alert('File JSON không hợp lệ.')}};r.readAsText(f)}
+async function logout(){clearInterval(cloudPollTimer);clearTimeout(cloudSaveTimer);cloudReady=false;cloudDirty=false;try{await apiRequest('logout',{},'POST')}catch(e){}state.user=null;state.userRole=null;document.getElementById('app').style.display='none';document.getElementById('auth').style.display='grid';document.getElementById('loginPass').value='';setSyncStatus('offline','Đã đăng xuất')}
+async function login(){
+ const email=document.getElementById('loginUser').value.trim().toLowerCase(),password=document.getElementById('loginPass').value;
+ if(!email||!password){alert('Vui lòng nhập email và mật khẩu.');return;}
+ try{setSyncStatus('loading','Đang đăng nhập…');const auth=await apiRequest('login',{email,password},'POST');state.user=auth.user.email;state.userRole=auth.user.role;state.profile=auth.user.profile||{};document.getElementById('auth').style.display='none';document.getElementById('app').style.display='block';await startCloudSync();}
+ catch(e){setSyncStatus('error','Đăng nhập thất bại');alert(e.message||'Không thể đăng nhập.');}
+}
+async function createInitialAdmin(){
+ const email=document.getElementById('newUser').value.trim().toLowerCase(),password=document.getElementById('newPass').value,password2=document.getElementById('newPass2').value,setupKey=document.getElementById('setupKey').value;
+ if(!email||password.length<10||password!==password2||!setupKey){alert('Vui lòng nhập đủ thông tin, mật khẩu tối thiểu 10 ký tự và xác nhận chính xác.');return;}
+ try{await apiRequest('setup',{email,password,setupKey},'POST');alert('Đã tạo tài khoản quản trị. Bạn có thể đăng nhập.');document.getElementById('backLogin').click();document.getElementById('loginUser').value=email;}
+ catch(e){alert(e.message||'Không thể khởi tạo quản trị viên.');}
+}
+document.getElementById('loginBtn').onclick=login;document.getElementById('loginPass').onkeydown=e=>{if(e.key==='Enter')login()};
+document.getElementById('setupLink').onclick=e=>{e.preventDefault();document.getElementById('loginPane').classList.add('hidden');document.getElementById('setupPane').classList.remove('hidden')};
+document.getElementById('backLogin').onclick=e=>{e.preventDefault();document.getElementById('setupPane').classList.add('hidden');document.getElementById('loginPane').classList.remove('hidden')};
+document.getElementById('createAdmin').onclick=createInitialAdmin;
 document.getElementById('globalLogoUpload').onchange=e=>{setLogoFile(e.target.files[0]);e.target.value=''};
-document.getElementById('loginBtn').onclick=login;document.getElementById('loginPass').onkeydown=e=>{if(e.key==='Enter')login()};document.getElementById('setupLink').onclick=e=>{e.preventDefault();document.getElementById('loginPane').classList.add('hidden');document.getElementById('setupPane').classList.remove('hidden')};document.getElementById('backLogin').onclick=e=>{e.preventDefault();document.getElementById('setupPane').classList.add('hidden');document.getElementById('loginPane').classList.remove('hidden')};document.getElementById('createAdmin').onclick=()=>{let u=document.getElementById('newUser').value.trim().toLowerCase(),p=document.getElementById('newPass').value,p2=document.getElementById('newPass2').value;if(!u||p.length<8||p!==p2){alert('Vui lòng nhập email/tên đăng nhập và mật khẩu tối thiểu 8 ký tự, xác nhận chính xác.');return}if(localStorage.getItem('nsg_auth')){alert('Thiết bị này đã có tài khoản quản trị.');return}localStorage.setItem('nsg_auth',JSON.stringify({user:u,pass:p}));alert('Đã tạo tài khoản demo. Bạn có thể đăng nhập.');document.getElementById('backLogin').click();document.getElementById('loginUser').value=u};document.getElementById('modalClose').onclick=closeModal;document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')closeModal()};document.getElementById('profileBtn').onclick=()=>go('settings');document.getElementById('menuBtn').onclick=()=>{document.getElementById('sidebar').classList.toggle('open');document.getElementById('mobileScrim').style.display=document.getElementById('sidebar').classList.contains('open')?'block':'none'};document.getElementById('mobileScrim').onclick=()=>{document.getElementById('sidebar').classList.remove('open');document.getElementById('mobileScrim').style.display='none'};document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('sidebar').classList.remove('open');document.getElementById('mobileScrim').style.display='none'}});document.getElementById('quickExport').onclick=backupJSON;
+document.getElementById('modalClose').onclick=closeModal;document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')closeModal()};document.getElementById('profileBtn').onclick=()=>go('settings');document.getElementById('menuBtn').onclick=()=>{document.getElementById('sidebar').classList.toggle('open');document.getElementById('mobileScrim').style.display=document.getElementById('sidebar').classList.contains('open')?'block':'none'};document.getElementById('mobileScrim').onclick=()=>{document.getElementById('sidebar').classList.remove('open');document.getElementById('mobileScrim').style.display='none'};document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('sidebar').classList.remove('open');document.getElementById('mobileScrim').style.display='none'}});document.getElementById('quickExport').onclick=backupJSON;
 read();updateLogo();
-let savedSession=localStorage.getItem('nsg_session'),savedAccount=JSON.parse(localStorage.getItem('nsg_auth')||'null');
-if(savedSession&&savedAccount&&savedSession===savedAccount.user){state.user=savedSession;document.getElementById('auth').style.display='none';document.getElementById('app').style.display='block';state.view='dashboard';nav();updateProfile();render()}
-else{document.getElementById('auth').style.display='grid';document.getElementById('app').style.display='none'}
+document.getElementById('auth').style.display='grid';document.getElementById('app').style.display='none';
 document.getElementById('profileBtn').onclick=()=>go('settings');
 ['sideLogo'].forEach(id=>{let el=document.getElementById(id);if(el){el.title='Về trang chủ';el.onclick=()=>go('dashboard')}});
 document.getElementById('topTitle').onclick=()=>go('dashboard');
-if(localStorage.getItem('nsg_auth'))document.getElementById('setupLink').textContent='Tài khoản đã được thiết lập trên thiết bị này';
+window.addEventListener('online',()=>{if(cloudReady){setSyncStatus('saving','Đang kết nối lại…');scheduleCloudSync();}});
+window.addEventListener('offline',()=>setSyncStatus('offline','Mất kết nối'));
+(async()=>{try{const me=await apiRequest('me');state.user=me.user.email;state.userRole=me.user.role;state.profile=me.user.profile||{};document.getElementById('auth').style.display='none';document.getElementById('app').style.display='block';await startCloudSync();}catch(e){setSyncStatus('offline','Chưa đăng nhập');}})();
 </script></body></html>
