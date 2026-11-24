@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PR-Branding Bệnh viện Đa khoa Quốc tế Nam Sài Gòn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fa;--surface:#fff;--ink:#202b40;--navy:#174477;--blue:#2866a5;--muted:#77849a;--line:#e4e9f1;--soft:#edf3fa;--green:#16845f;--amber:#b87912;--red:#c74646;--shadow:0 10px 30px rgba(23,55,91,.07);font-family:Inter,system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-size:14px}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+#auth{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(135deg,#edf3fa,#f8fafc)}.auth-card{width:min(460px,100%);background:white;border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:var(--shadow)}.brandmark{display:flex;align-items:center;gap:13px;margin-bottom:28px}.logo{width:48px;height:48px;border-radius:14px;background:var(--navy);color:white;display:grid;place-items:center;font-weight:800;font-size:22px}.brandmark strong{font-size:16px;color:var(--navy);display:block}.brandmark small{color:var(--muted)}h1{font-size:27px;margin:0 0 7px;letter-spacing:-.6px}h2{font-size:18px;margin:27px 0 13px}h3{font-size:15px;margin:0 0 14px}.muted,.hint{color:var(--muted)}.hint{font-size:12px;line-height:1.6}.field{margin:14px 0}.field label{display:block;font-weight:600;font-size:12px;color:var(--muted);margin-bottom:7px}.field input,.field select,.field textarea,.toolbar input,.toolbar select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue)}.btn{border:0;background:var(--navy);color:white;border-radius:10px;padding:10px 15px;font-weight:650}.btn:hover{filter:brightness(1.08)}.btn.secondary{background:var(--soft);color:var(--navy)}.btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}.btn.danger{background:#fff0f0;color:var(--red)}.btn.small{padding:7px 10px;font-size:12px}.full{width:100%}
+#app{display:none;min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:258px;background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;z-index:20}.side-brand{height:88px;min-height:88px;padding:7px 12px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center;text-align:center}.side-brand .logo{width:32px;height:32px;font-size:15px;object-fit:cover;border-radius:8px;flex:0 0 32px}.side-brand .logo-img{width:32px;height:32px;border-radius:8px;flex:0 0 32px}.logo-img{width:48px;height:48px;object-fit:cover;border-radius:12px;display:block}.side-brand .logo-img{width:32px;height:32px;border-radius:8px}.side-brand b{font-size:13px;letter-spacing:.45px;line-height:1.15}.side-brand small{max-width:220px;line-height:1.15}.side-brand b{font-size:14px;color:var(--navy)}.side-brand small{display:block;color:var(--muted);font-size:10px;margin-top:1px}.nav{padding:12px;overflow:auto;flex:1}.nav-label{font-size:10px;letter-spacing:1px;color:#98a3b5;font-weight:800;padding:17px 10px 7px}.nav button{width:100%;border:0;background:transparent;color:#68768d;text-align:left;padding:10px 11px;border-radius:9px;margin:2px 0;display:flex;align-items:center;gap:11px;font-weight:550}.nav button:hover,.nav button.active{background:var(--soft);color:var(--navy)}.nav .ico{width:20px;text-align:center;font-size:16px}.side-foot{border-top:1px solid var(--line);padding:13px 17px;font-size:11px;color:var(--muted)}
+.main{margin-left:258px;min-height:100vh}.topbar{height:88px;min-height:88px;background:var(--surface);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 27px;position:sticky;top:0;z-index:10}.crumb{display:none}.top-actions{display:flex;align-items:center;gap:10px}.top-title{font-size:17px;font-weight:800;color:var(--navy);letter-spacing:-.2px}.top-title:empty{display:none}.page-head>div:first-child>h1{display:none}.profile{display:flex;gap:9px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:6px 10px;background:var(--surface);text-align:left}.avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--navy);font-weight:800}.profile b{display:block;font-size:12px}.profile small{font-size:10px;color:var(--muted)}.content{padding:27px;max-width:1500px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}.page-head p{margin:5px 0 0;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap}.grid{display:grid;gap:14px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:22px}.card{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:18px;box-shadow:0 2px 7px rgba(20,50,80,.02);min-width:0}.stat-label{color:var(--muted);font-size:12px;display:flex;justify-content:space-between}.stat-value{font-size:27px;font-weight:800;color:var(--navy);margin:13px 0 4px}.stat-note{font-size:11px;color:var(--muted)}.two{grid-template-columns:1.25fr 1fr;margin-top:15px}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.quick-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.quick{display:flex;gap:12px;align-items:center;text-align:left}.quick .qico{width:39px;height:39px;display:grid;place-items:center;border-radius:11px;background:var(--soft);font-size:18px}.quick b{font-size:13px}.quick small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:17px 0}.toolbar input{max-width:300px}.toolbar select{width:auto;min-width:140px}.table-wrap{overflow:auto;padding:0}table{width:100%;border-collapse:collapse;min-width:700px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap}th{font-size:11px;color:var(--muted);font-weight:700;background:#fafbfd}td{font-size:12px}tr:last-child td{border-bottom:0}.tag{display:inline-block;border-radius:20px;padding:4px 8px;background:var(--soft);color:var(--navy);font-size:10px;font-weight:700}.tag.green{background:#e7f5ef;color:var(--green)}.tag.amber{background:#fff4df;color:var(--amber)}.tag.red{background:#ffeded;color:var(--red)}.empty{text-align:center;padding:30px;color:var(--muted)}.progress{height:7px;background:#edf1f6;border-radius:20px;overflow:hidden;min-width:90px}.progress i{display:block;height:100%;background:var(--blue)}.row-actions{display:flex;gap:5px}.icon-btn{border:1px solid var(--line);background:white;color:var(--muted);border-radius:7px;padding:5px 8px}.list{padding:0;margin:0;list-style:none}.list li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.list li:last-child{border:0}.list small{display:block;color:var(--muted);margin-top:4px;font-size:11px}.calendar-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-left:1px solid var(--line);border-top:1px solid var(--line);margin-top:15px}.day{min-height:108px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:7px;font-size:11px}.day .num{font-weight:700;color:var(--muted);margin-bottom:7px}.event{background:var(--soft);border-left:3px solid var(--blue);border-radius:4px;padding:4px 5px;margin:4px 0;font-size:10px;white-space:normal;cursor:pointer}.event.deadline{border-color:var(--red);background:#fff0f0}.event.meeting{border-color:var(--green);background:#eaf6f0}.modal{position:fixed;inset:0;background:#15243b80;z-index:50;display:grid;place-items:center;padding:18px}.modal-box{background:var(--surface);border-radius:17px;width:min(620px,100%);max-height:90vh;overflow:auto;padding:22px;box-shadow:var(--shadow)}.modal-head{display:flex;justify-content:space-between;align-items:center}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 13px}.form-grid .wide{grid-column:1/-1}.notice{border:1px solid #f0dfb9;background:#fff9eb;color:#815c17;padding:12px 14px;border-radius:10px;font-size:12px;line-height:1.55;margin:15px 0}.success{border-color:#cce9dc;background:#effaf4;color:#176b4e}.section-note{font-size:12px;color:var(--muted);line-height:1.6}.barline{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin:13px 0 5px}.barline+ .progress{height:9px}.kpi{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.kpi:last-child{border:0}.mobile-menu{display:none}
+@media(max-width:1100px){.stats,.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}}@media(max-width:760px){.sidebar{transform:translateX(-100%);transition:.2s}.sidebar.open{transform:translateX(0)}.main{margin-left:0}.mobile-menu{display:inline-block}.topbar{padding:0 13px}.content{padding:18px 13px}.top-actions .profile small{display:none}.stats,.quick-grid,.three{grid-template-columns:1fr 1fr}.day{min-height:82px;padding:4px}.event{font-size:9px}.crumb{font-size:12px}}@media(max-width:450px){.stats,.quick-grid,.three,.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}.topbar{height:60px}.profile{padding:4px}.profile b{max-width:90px;overflow:hidden;text-overflow:ellipsis}}
+
+.mobile-scrim{display:none;position:fixed;inset:0;background:rgba(14,27,46,.38);z-index:19;}
+/* Mobile-first usability layer: preserve desktop functions and make every control touch-friendly. */
+@media (max-width: 760px) {
+  html, body { width:100%; min-width:320px; overflow-x:hidden; -webkit-text-size-adjust:100%; }
+  body { font-size:14px; }
+  #app { width:100%; overflow-x:clip; }
+  .sidebar {
+    width:min( min(86vw, 320px), 320px );
+    max-width:calc(100vw - 48px);
+    transform:translateX(-105%);
+    box-shadow:none;
+    transition:transform .22s ease, box-shadow .22s ease;
+    padding-bottom:env(safe-area-inset-bottom);
+  }
+  .sidebar.open {
+    transform:translateX(0);
+    box-shadow:18px 0 45px rgba(16,35,61,.18);
+  }
+  .sidebar.open ~ .mobile-scrim { display:block; }
+  .side-brand { flex-direction:column; height:88px; min-height:88px; gap:3px; text-align:center; justify-content:center; padding:7px 12px; }
+  .side-brand .logo, .side-brand .logo-img, .side-brand .logo-upload-placeholder { width:40px; height:40px; flex-basis:40px; }
+  .side-brand b { font-size:13px; }
+  .side-brand small { max-width:210px; font-size:10px; line-height:1.3; }
+  .nav { padding:8px 10px 18px; overscroll-behavior:contain; }
+  .nav button { min-height:46px; padding:12px; font-size:14px; }
+  .side-foot { padding-bottom:calc(13px + env(safe-area-inset-bottom)); }
+  .main { margin-left:0; width:100%; min-width:0; }
+  .topbar {
+    height:76px;
+    min-height:76px;
+    padding:8px 10px;
+    gap:8px;
+    position:sticky;
+    top:0;
+    z-index:15;
+  }
+  .topbar-left { min-width:0; flex:1; gap:8px!important; }
+  .top-title { display:block; font-size:14px; line-height:1.25; white-space:normal; max-width:46vw; }
+  .mobile-menu { display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; flex:0 0 42px; padding:0; }
+  .top-actions { gap:6px; flex:0 0 auto; }
+  #quickExport { min-height:40px; padding:8px 10px; font-size:11px; }
+  .profile { min-height:42px; max-width: min(48vw, 205px); gap:6px; padding:4px 7px; }
+  .profile b { max-width:112px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:10px; }
+  .profile small { display:none; }
+  .profile .avatar { width:29px; height:29px; flex:0 0 29px; }
+  .content { width:100%; padding:16px 12px calc(28px + env(safe-area-inset-bottom)); }
+  h1 { font-size:22px; line-height:1.25; }
+  h2 { font-size:16px; margin:22px 0 11px; }
+  h3 { font-size:14px; }
+  .page-head { align-items:stretch; gap:12px; }
+  .page-head > div:first-child { min-width:0; }
+  .page-head p { font-size:12px; line-height:1.5; }
+  .actions { gap:7px; }
+  .page-head .actions { width:100%; }
+  .page-head .actions .btn { flex:1 1 auto; }
+  .btn { min-height:42px; padding:10px 12px; font-size:13px; }
+  .btn.small { min-height:38px; }
+  .grid { gap:10px; }
+  .stats, .quick-grid, .three { grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+  .two { grid-template-columns:minmax(0,1fr); gap:10px; }
+  .card { padding:13px; border-radius:12px; }
+  .stat-value { font-size:22px; margin:9px 0 3px; overflow-wrap:anywhere; }
+  .stat-label { font-size:11px; line-height:1.35; }
+  .quick { gap:8px; }
+  .quick .qico { width:34px; height:34px; flex:0 0 34px; }
+  .quick b { font-size:11px; }
+  .quick small { font-size:10px; }
+  .toolbar { gap:7px; margin:13px 0; }
+  .toolbar input { max-width:none; min-width:100%; }
+  .toolbar select { flex:1 1 130px; min-width:0; }
+  input, select, textarea, .field input, .field select, .field textarea, .toolbar input, .toolbar select {
+    min-height:44px;
+    font-size:16px; /* prevents iOS Safari focus zoom */
+    padding:10px 11px;
+  }
+  textarea { min-height:88px; }
+  .table-wrap {
+    width:100%;
+    max-width:100%;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+    border-radius:12px;
+  }
+  .table-wrap table { min-width:720px; }
+  .table-wrap th, .table-wrap td { padding:11px 10px; font-size:12px; }
+  .table-wrap .row-actions { gap:6px; }
+  .table-wrap .icon-btn { min-height:36px; min-width:38px; }
+  .calendar-head { align-items:stretch; }
+  .calendar-head > * { max-width:100%; }
+  .calendar-head .actions { flex-wrap:wrap; }
+  .calendar-grid {
+    min-width:650px;
+    grid-template-columns:repeat(7,minmax(86px,1fr));
+  }
+  .calendar-grid-scroll { max-width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .day { min-height:92px; padding:6px; }
+  .event { font-size:10px; line-height:1.35; padding:5px; }
+  .modal { place-items:end center; padding:0; }
+  .modal-box {
+    width:100%;
+    max-width:none;
+    max-height: min(92dvh, 900px);
+    border-radius:18px 18px 0 0;
+    padding:17px 14px calc(18px + env(safe-area-inset-bottom));
+    overflow-y:auto;
+    overscroll-behavior:contain;
+  }
+  .modal-head { position:sticky; top:-17px; z-index:2; background:var(--surface); padding:8px 0 12px; }
+  .form-grid { grid-template-columns:minmax(0,1fr); gap:0; }
+  .form-grid .wide { grid-column:auto; }
+  .field { margin:9px 0; }
+  .field label { font-size:12px; }
+  .modal .actions { position:sticky; bottom:calc(-18px - env(safe-area-inset-bottom)); background:var(--surface); padding:10px 0 calc(5px + env(safe-area-inset-bottom)); }
+  .modal .actions .btn { flex:1; }
+  .list li { align-items:flex-start; }
+  .row-actions { flex-wrap:wrap; }
+  .notice, .hint { font-size:11px; }
+}
+@media (max-width: 390px) {
+  .content { padding-left:10px; padding-right:10px; }
+  .topbar { padding-left:8px; padding-right:8px; }
+  .top-title { font-size:12px; }
+  #quickExport { font-size:10px; padding:7px 8px; }
+  .profile { max-width:45vw; }
+  .profile b { max-width:82px; }
+  .stats, .quick-grid, .three { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .stat-value { font-size:19px; }
+}
+@media (max-width: 350px) {
+  .stats, .quick-grid, .three { grid-template-columns:minmax(0,1fr); }
+  .profile { max-width:42vw; }
+}
+@media (hover:none) and (pointer:coarse) {
+  button, a, .event, .icon-btn { -webkit-tap-highlight-color:transparent; touch-action:manipulation; }
+  .nav button, .btn, .icon-btn { min-height:42px; }
+}
+
+
+/* NSG corporate blue-gradient theme */
+:root{
+ --bg:#e8f2fb;
+ --surface:#ffffff;
+ --ink:#20334d;
+ --navy:#173d70;
+ --blue:#087bc7;
+ --muted:#6f849e;
+ --line:#d4e2f0;
+ --soft:#e7f2fc;
+ --green:#169b75;
+ --amber:#c28a24;
+ --red:#c94d57;
+ --shadow:0 12px 32px rgba(13,55,101,.13);
+}
+body{background:linear-gradient(135deg,#eaf3fb 0%,#d8eafa 48%,#eef6fc 100%);color:var(--ink)}
+#auth{background:radial-gradient(ellipse at 82% 18%,rgba(20,143,220,.9),transparent 38%),linear-gradient(135deg,#102d58 0%,#174b83 48%,#0785ce 100%);position:relative;overflow:hidden}
+#auth:before{content:"";position:absolute;inset:auto -10% -45% 28%;height:70%;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,0));transform:rotate(-12deg);border-radius:50%}
+.auth-card{position:relative;z-index:1;border:1px solid rgba(255,255,255,.55);box-shadow:0 24px 70px rgba(4,24,55,.32);border-radius:20px}
+.brandmark{align-items:center;text-align:center;display:flex;flex-direction:column;gap:7px}
+.brandmark>div:last-child{display:flex;flex-direction:column;align-items:center;gap:4px}
+.brandmark strong{color:#173f73;letter-spacing:.5px}
+.brandmark small{color:#71839b}
+.sidebar{background:linear-gradient(180deg,#102d58 0%,#123d70 52%,#14538a 100%);border-right:1px solid rgba(255,255,255,.12);color:#fff}
+.side-brand{border-bottom:1px solid rgba(255,255,255,.16)}
+.side-brand b{color:#fff}
+.side-brand small{color:rgba(232,243,255,.76)}
+.nav-label{color:rgba(220,236,252,.56)}
+.nav button{color:rgba(237,246,255,.82)}
+.nav button:hover,.nav button.active{background:linear-gradient(90deg,rgba(42,145,224,.36),rgba(39,132,209,.16));color:#fff;box-shadow:inset 3px 0 0 #59b7f4}
+.side-foot{border-top:1px solid rgba(255,255,255,.14);color:rgba(229,241,255,.62)}
+.topbar{background:linear-gradient(105deg,#153b70 0%,#15528e 52%,#0785cf 100%);border-bottom:1px solid rgba(255,255,255,.18);box-shadow:0 5px 18px rgba(13,55,101,.12)}
+.top-title{color:#fff}
+.topbar .btn.secondary{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff}
+.profile{background:rgba(255,255,255,.96);border:1px solid rgba(255,255,255,.45);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.content{background:transparent}
+.card{background:rgba(255,255,255,.97);border-color:#d9e7f4;box-shadow:var(--shadow)}
+.btn{background:linear-gradient(105deg,#174477,#087bc7);box-shadow:0 5px 12px rgba(14,83,145,.16)}
+.btn:hover{filter:brightness(1.06)}
+.btn.secondary{background:#e4f0fb;color:#174477;border:1px solid #c7dced;box-shadow:none}
+.btn.danger{background:#c94d57}
+input,select,textarea{border-color:#cddded;background:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(8,123,199,.18);border-color:#258bd0}
+.tag{background:#e5f1fc;color:#174477}
+.modal-box{border:1px solid #d4e4f2;box-shadow:0 22px 70px rgba(7,37,74,.28)}
+.mobile-scrim{background:rgba(5,24,50,.58)}
+.logo-upload-placeholder{
+ width:48px;height:48px;flex:0 0 48px;border:1.5px dashed #75a9d3;border-radius:11px;
+ background:linear-gradient(145deg,#f3f9ff,#e2effb);color:#1b5c96;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
+ cursor:pointer;padding:3px;line-height:1;
+}
+.logo-upload-placeholder span{font-size:23px;font-weight:400;line-height:22px}
+.logo-upload-placeholder small{font-size:8px;font-weight:700;letter-spacing:.1px}
+.logo-upload-placeholder:hover{border-color:#087bc7;background:#dceeff}
+.logo-upload-placeholder.preview{width:64px;height:64px;flex-basis:64px}
+.side-brand .logo-upload-placeholder{width:40px;height:40px;flex-basis:40px;border-radius:9px}
+.brandmark .logo-upload-placeholder{width:76px;height:76px;flex-basis:76px;border-radius:14px}
+.logo-img{width:48px;height:48px;object-fit:contain;background:#fff;border:1px solid #dce8f3;border-radius:11px;padding:3px;display:block;cursor:pointer}
+.side-brand .logo-img{width:40px;height:40px;flex-basis:40px}
+.brandmark .logo-img{width:76px;height:76px;flex-basis:76px;border-radius:14px}
+.logo-img.preview{width:64px;height:64px;flex-basis:64px}
+
+
+.profile{min-width:230px;max-width:360px;justify-content:flex-start;text-align:left}
+.profile>span:nth-child(2){min-width:0;display:flex;flex-direction:column;gap:3px}
+.profile b{display:block;white-space:normal;line-height:1.2;font-size:12px}
+.profile small{display:block;white-space:normal;line-height:1.25;font-size:10px}
+.save-state{font-size:11px;color:var(--green);padding:7px 0}
+.sync-warning{padding:12px;border-radius:10px;background:#fff6e5;border:1px solid #f0d9a8}
+.sync-warning b{color:#805a12}
+@media(max-width:760px){.profile{min-width:0;max-width:52vw}.profile b{font-size:10px}.profile small{display:block;font-size:9px}.profile>span:nth-child(2){max-width:34vw}}
+
+
+.attachment-field{display:flex;flex-direction:column;gap:7px}.attachment-field small{color:var(--muted);font-size:11px}
+@media(max-width:760px){.toolbar #pressSearch{min-width:100%}}
+
+</style></head>
+<body>
+<section id="auth"><div class="auth-card"><div class="brandmark"><button type="button" class="logo-upload-placeholder" id="authLogo" aria-label="Tải logo bệnh viện"><span>＋</span><small>Tải logo</small></button><div><strong>PR - BRANDING</strong><small>Bệnh viện Đa khoa Quốc tế Nam Sài Gòn</small></div></div><div id="loginPane"><h1>Đăng nhập hệ thống</h1><p class="muted">Sử dụng tài khoản được cấp để truy cập không gian làm việc.</p><div class="field"><label>Email / Tên đăng nhập</label><input id="loginUser" autocomplete="username" placeholder="email@benhviennsg.com"></div><div class="field"><label>Mật khẩu</label><input id="loginPass" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu"></div><button class="btn full" id="loginBtn">Đăng nhập</button><p class="hint" style="margin-top:18px">Lần đầu sử dụng? <a href="#" id="setupLink">Thiết lập tài khoản quản trị</a></p></div><div id="setupPane" class="hidden"><h1>Khởi tạo quản trị viên</h1><p class="muted">Tạo tài khoản đầu tiên cho bản chạy thử trên thiết bị này.</p><div class="field"><label>Email / Tên đăng nhập</label><input id="newUser" placeholder="admin@benhviennsg.com"></div><div class="field"><label>Mật khẩu</label><input id="newPass" type="password" placeholder="Tối thiểu 8 ký tự"></div><div class="field"><label>Nhập lại mật khẩu</label><input id="newPass2" type="password"></div><button class="btn full" id="createAdmin">Tạo tài khoản</button><p class="hint">Lưu ý: đây là đăng nhập demo lưu trên trình duyệt, chưa phải xác thực bảo mật dùng cho môi trường chính thức.</p><p><a href="#" id="backLogin">Quay lại đăng nhập</a></p></div></div></section>
+<div id="app"><aside class="sidebar" id="sidebar"><div class="side-brand"><button type="button" class="logo-upload-placeholder" id="sideLogo" aria-label="Tải logo bệnh viện"><span>＋</span><small>Tải logo</small></button><div><b>PR - BRANDING</b><small>Bệnh viện Đa khoa Quốc tế Nam Sài Gòn</small></div></div><nav class="nav" id="nav"></nav><div class="side-foot">Phiên bản prototype · Dữ liệu trên thiết bị</div></aside><div class="mobile-scrim" id="mobileScrim" aria-hidden="true"></div><main class="main"><header class="topbar"><div class="topbar-left" style="display:flex;align-items:center;gap:12px"><button class="btn secondary mobile-menu" id="menuBtn">☰</button><strong id="topTitle" class="top-title"></strong></div><div class="top-actions"><button class="btn secondary small" id="quickExport">↓ Excel</button><button class="profile" id="profileBtn"><span class="avatar" id="avatar">A</span><span><b id="topUsername">Quản trị viên</b><small id="topRole">Phòng PR - Branding</small></span><span>⌄</span></button></div></header><div class="content" id="view"></div></main></div>
+<input type="file" id="globalLogoUpload" accept="image/png,image/jpeg,image/webp" class="hidden"><div class="modal hidden" id="modal"><div class="modal-box"><div class="modal-head"><h3 id="modalTitle">Thông tin</h3><button class="icon-btn" id="modalClose">✕</button></div><div id="modalBody"></div></div></div>
+<input type="file" id="excelFile" accept=".csv,.xlsx,.xls" class="hidden">
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script>
+const STORE='nsg_pr_branding_v2';
+const modules={projects:{title:'Dự án',icon:'🗂',desc:'Danh mục và tiến độ các dự án PR - Branding.',fields:[['name','Tên dự án','text'],['type','Nhóm dự án','select','PR - Branding|Sponsorship|Partner|OOH|Vật phẩm & quà tặng|Campaign|Khác'],['owner','Phụ trách','text'],['status','Trạng thái','select','Lên kế hoạch|Đang triển khai|Hoàn thành|Tạm dừng'],['start','Ngày bắt đầu','date'],['due','Deadline','date'],['budget','Ngân sách dự kiến','number'],['note','Ghi chú','textarea']]},tasks:{title:'Công việc & Tiến độ',icon:'☑',desc:'Theo dõi đầu việc, người phụ trách, deadline và kết quả hằng ngày.',fields:[['name','Tên công việc','text'],['project','Dự án liên quan','text'],['owner','Người thực hiện','text'],['status','Trạng thái','select','Chưa bắt đầu|Đang thực hiện|Chờ duyệt|Hoàn thành|Trễ hạn'],['priority','Ưu tiên','select','Thấp|Trung bình|Cao|Khẩn'],['start','Ngày thực hiện','date'],['due','Deadline','date'],['completedDate','Ngày hoàn thành','date'],['doneNote','Kết quả / ghi chú hoàn thành','textarea']]},calendar:{title:'Lịch công việc',icon:'🗓',desc:'Lịch công việc, lịch họp, sự kiện và deadline; hỗ trợ xuất lịch .ICS để thêm vào lịch điện thoại.',fields:[['title','Tiêu đề','text'],['kind','Loại lịch','select','Công việc|Cuộc họp|Sự kiện|Deadline'],['date','Ngày','date'],['time','Giờ','time'],['end','Kết thúc','time'],['owner','Người tham gia / phụ trách','text'],['project','Dự án liên quan','text'],['note','Ghi chú / địa điểm','textarea']]},budget:{title:'Ngân sách & Thanh toán',icon:'💰',desc:'Theo dõi ngân sách kế hoạch, chi phí thực tế theo hạng mục và nhiều đợt thanh toán.',fields:[['name','Hạng mục / hợp đồng','text'],['project','Dự án liên quan','text'],['partner','Đối tác / nhà cung cấp','text'],['kind','Loại giao dịch','select','Ngân sách kế hoạch|Chi phí thực tế|Hợp đồng|Nghiệm thu|Thanh toán|Đối trừ dịch vụ'],['costType','Nhóm chi phí','select','Nhân sự|Ăn uống|Vật tư y tế|Vật tư sự kiện|Tăng ca|Vận chuyển|Sản xuất|Truyền thông|Khác'],['planned','Ngân sách theo kế hoạch (VNĐ)','number'],['amount','Chi phí thực tế / giá trị hồ sơ (VNĐ)','number'],['paymentRound','Đợt thanh toán','select','Đợt 1|Đợt 2|Đợt 3|Đợt 4|Đợt 5|Quyết toán'],['paid','Giá trị thanh toán đợt này (VNĐ)','number'],['date','Ngày phát sinh / thanh toán','date'],['status','Trạng thái','select','Dự kiến|Đang triển khai|Chờ hồ sơ|Chờ thanh toán|Đã thanh toán|Đã đối trừ'],['note','Ghi chú','textarea']]},content:{title:'Truyền thông',icon:'📰',desc:'Quản lý kế hoạch sản xuất, tiến độ và sản lượng nội dung đã đăng tải kèm đường dẫn sản phẩm.',fields:[['name','Tên nội dung / tiêu đề','text'],['format','Định dạng','select','Bài PR|Bài báo|Bài social|Video|Livestream|Ảnh|Banner|Thông cáo báo chí|Khác'],['channel','Kênh / đơn vị đăng tải','select','Báo Thanh Niên|Báo Dân Trí|Website bệnh viện|Facebook|TikTok|YouTube|Zalo OA|Màn hình / Banner|Khác'],['project','Dự án / chiến dịch','text'],['owner','Phụ trách','text'],['productionPlan','Kế hoạch sản xuất','date'],['productionStatus','Tiến độ sản xuất','select','Chưa thực hiện|Đang sản xuất|Chờ duyệt|Cần chỉnh sửa|Hoàn tất'],['publish','Ngày đăng tải','date'],['status','Trạng thái đăng tải','select','Chưa đăng|Đã đăng|Đã gỡ'],['url','Link sản phẩm đã đăng','url'],['bannerImpressions','Banner - lượt hiển thị','number'],['bannerClicks','Banner - lượt nhấp','number'],['ga4Users','GA4 - người dùng','number'],['ga4Sessions','GA4 - phiên','number'],['ga4Views','GA4 - lượt xem trang','number'],['note','Ghi chú','textarea']]},reports:{title:'Report hiệu quả',icon:'📊',desc:'Tổng hợp hiệu quả truyền thông theo dự án, kênh và sản phẩm từ dữ liệu đã nhập.',fields:[]},inventory:{title:'Kho Marketing',icon:'🎁',desc:'Quản lý tồn kho quà tặng, vật phẩm, nhập - xuất và tồn khả dụng.',fields:[['name','Tên vật phẩm','text'],['sku','Mã vật phẩm','text'],['group','Nhóm','select','Quà tặng|Vật phẩm sự kiện|Ấn phẩm|Đồng phục|Khác'],['unit','Đơn vị tính','text'],['opening','Tồn đầu kỳ','number'],['in','Nhập kho','number'],['out','Đã xuất','number'],['min','Tồn tối thiểu','number'],['location','Vị trí lưu kho','text'],['note','Ghi chú','textarea']]},partners:{title:'Sự kiện',icon:'🎪',desc:'Tổng quan các sự kiện Branding, Sponsorship và hoạt động nội bộ của bệnh viện.',fields:[['name','Tên sự kiện','text'],['type','Nhóm sự kiện','select','Branding|Sponsorship|Đối ngoại|Nội bộ|Hội thảo / Tọa đàm|Hoạt động cộng đồng|Khác'],['format','Hình thức','select','Tài trợ|Đồng tổ chức|Bệnh viện tổ chức|Tham gia|Khác'],['owner','Đầu mối phụ trách','text'],['project','Dự án / chiến dịch liên quan','text'],['date','Ngày diễn ra','date'],['location','Địa điểm','text'],['status','Trạng thái','select','Lên kế hoạch|Đang chuẩn bị|Đã xác nhận|Đang diễn ra|Hoàn tất|Tạm hoãn'],['budget','Ngân sách dự kiến (VNĐ)','number'],['note','Nội dung / quyền lợi / ghi chú','textarea']]}}
+
+
+// TRUYỀN THÔNG: kế hoạch nội dung -> sản xuất -> hiệu quả.
+modules.contentPlan = {
+  title:'Kế hoạch nội dung', icon:'🗓️',
+  desc:'Lập lịch nội dung theo tháng hoặc tuần; mỗi kế hoạch là đầu vào để theo dõi tiến độ sản xuất.',
+  fields:[
+    ['name','Tên nội dung / tiêu đề','text'],
+    ['format','Định dạng','select','Bài PR|Bài báo|Bài social|Video|Livestream|Ảnh|Banner|Thông cáo báo chí|Khác'],
+    ['channel','Kênh dự kiến','select','Báo Thanh Niên|Báo Dân Trí|Website bệnh viện|Facebook|TikTok|YouTube|Zalo OA|Màn hình / Banner|Khác'],
+    ['project','Dự án / chiến dịch','text'],
+    ['owner','Người phụ trách','text'],
+    ['planDate','Ngày dự kiến sản xuất / đăng','date'],
+    ['deadline','Deadline hoàn thành','date'],
+    ['status','Trạng thái kế hoạch','select','Dự kiến|Đã lên kế hoạch|Ưu tiên|Tạm hoãn'],
+    ['note','Ghi chú','textarea']
+  ]
+};
+modules.content = {
+  title:'Sản xuất nội dung', icon:'✍️',
+  desc:'Theo dõi tiến độ sản xuất và đối chiếu trực tiếp với kế hoạch nội dung đã lập.',
+  fields:[
+    ['planId','Kế hoạch nội dung liên kết','planref'],
+    ['name','Tên nội dung / tiêu đề','text'],
+    ['format','Định dạng','select','Bài PR|Bài báo|Bài social|Video|Livestream|Ảnh|Banner|Thông cáo báo chí|Khác'],
+    ['channel','Kênh đăng tải','select','Báo Thanh Niên|Báo Dân Trí|Website bệnh viện|Facebook|TikTok|YouTube|Zalo OA|Màn hình / Banner|Khác'],
+    ['project','Dự án / chiến dịch','text'],
+    ['owner','Người phụ trách','text'],
+    ['productionStatus','Tiến độ sản xuất','select','Chưa thực hiện|Đang sản xuất|Chờ duyệt|Cần chỉnh sửa|Hoàn tất'],
+    ['attachment','File DOC / link tài liệu đính kèm','attachment'],
+    ['note','Ghi chú','textarea']
+  ]
+};
+modules.contracts = {
+  title:'Hợp đồng', icon:'📄',
+  desc:'Quản lý hợp đồng, đối tác, giá trị, thời hạn và tình trạng nghiệm thu / phụ lục.',
+  fields:[
+    ['name','Tên hợp đồng','text'],['project','Dự án liên quan','text'],['partner','Đối tác / nhà cung cấp','text'],
+    ['contractNo','Số hợp đồng','text'],['value','Giá trị hợp đồng (VNĐ)','number'],['signedDate','Ngày ký','date'],
+    ['start','Ngày hiệu lực','date'],['end','Ngày hết hạn','date'],
+    ['acceptance','Tình trạng nghiệm thu','select','Chưa thực hiện|Đang thực hiện|Đã nghiệm thu một phần|Đã nghiệm thu đầy đủ'],
+    ['status','Tình trạng hợp đồng','select','Dự thảo|Chờ ký|Đang hiệu lực|Đã hoàn thành|Thanh lý'],
+    ['note','Ghi chú / phụ lục / đối trừ','textarea']
+  ]
+};
+modules.payments = {
+  title:'Thanh toán', icon:'💳',
+  desc:'Theo dõi từng đợt thanh toán, hồ sơ, số tiền đã chi và số còn phải thanh toán.',
+  fields:[
+    ['contract','Hợp đồng / hạng mục','text'],['project','Dự án liên quan','text'],['partner','Đối tác / nhà cung cấp','text'],
+    ['round','Đợt thanh toán','select','Đợt 1|Đợt 2|Đợt 3|Đợt 4|Đợt 5|Đợt 6|Đợt 7|Quyết toán'],
+    ['amount','Giá trị đề nghị thanh toán (VNĐ)','number'],['paid','Số tiền đã thanh toán (VNĐ)','number'],
+    ['offset','Giá trị đối trừ dịch vụ (VNĐ)','number'],['date','Ngày thanh toán dự kiến / thực tế','date'],
+    ['status','Tình trạng thanh toán','select','Chưa đến hạn|Đang chuẩn bị hồ sơ|Chờ duyệt|Chờ thanh toán|Đã thanh toán|Đã đối trừ'],
+    ['note','Ghi chú / chứng từ','textarea']
+  ]
+};
+
+
+modules.specialMetrics = {
+ title:'Hiệu quả chuyên trang', icon:'📊',
+ desc:'Theo dõi số liệu hiệu quả chuyên trang theo từng tháng và từng đơn vị báo.',
+ fields:[
+  ['month','Tháng báo cáo','month'],
+  ['outlet','Chuyên trang / đơn vị','select','Báo Thanh Niên|Báo Dân Trí|Khác'],
+  ['pageViews','Pageview chuyên trang','number'],
+  ['articleViews','View bài viết / video','number'],
+  ['bannerCTR','CTR banner (%)','number'],
+  ['bannerViews','View banner','number'],
+  ['note','Ghi chú / nguồn số liệu','textarea']
+ ]
+};
+modules.pressCoverage = {
+ title:'Hiệu quả báo chí', icon:'📰',
+ desc:'Cơ sở dữ liệu tập trung toàn bộ bài đăng trên báo chí, trang tin và kênh social của các đơn vị truyền thông.',
+ fields:[
+  ['title','Tên bài viết / nội dung','text'],
+  ['url','Link đăng tải','url'],
+  ['publishDate','Ngày đăng','date'],
+  ['outlet','Báo / đơn vị truyền thông','text'],
+  ['mediaType','Loại hình','select','Báo điện tử|Báo giấy|Trang social của báo|Trang social của kênh truyền thông|Website / trang tin|Khác'],
+  ['type','Hình thức','select','Earned|Paid|Owned|Shared|Khác'],
+  ['genre','Thể loại','select','Tin tức|Thông cáo báo chí|PR|Dnews|Phỏng vấn|Phóng sự|Livestream|Bài social|Khác'],
+  ['event','Sự kiện / chiến dịch','text'],
+  ['mentions','Chuyên khoa / bệnh viện được nhắc tên','text'],
+  ['doctors','Bác sĩ được nhắc tên','text'],
+  ['note','Ghi chú','textarea']
+ ]
+};
+
+let state={user:null,profile:{},logo:'',data:{},logs:[],history:[],shares:[],view:'dashboard',calMode:'month',calDate:new Date(),filter:''};
+function read(){try{let x=JSON.parse(localStorage.getItem(STORE)||'{}');state.data=x.data||{};if(state.data.content){state.data.content=state.data.content.map(o=>({...o,productionStatus:o.productionStatus||'Chưa thực hiện',pageViews:o.pageViews??o.specialPageViews??0,contentViews:o.contentViews??0,bannerCTR:o.bannerCTR??o.specialPageCTR??0,bannerViews:o.bannerViews??o.bannerImpressions??0}));}if(state.data.output&&(!state.data.content||!state.data.content.length)){state.data.content=state.data.output.map(o=>({...o,productionStatus:'Hoàn tất',status:o.status||'Đã đăng',pageViews:o.specialPageViews||0,contentViews:o.contentViews||0,bannerCTR:o.bannerCTR||0,bannerViews:o.bannerViews||o.specialPageImpressions||0}));}state.logs=x.logs||[];state.history=x.history||[];state.shares=x.shares||[];
+if((!state.data.pressCoverage||!state.data.pressCoverage.length)&&state.data.content?.length){
+ state.data.pressCoverage=state.data.content.filter(o=>o.url||o.publish).map(o=>({
+  id:'press_migrated_'+(o.id||Date.now()),title:o.name||'',url:o.url||'',publishDate:o.publish||'',
+  outlet:o.channel||'',mediaType:'',type:'',genre:'',event:o.project||'',mentions:'',doctors:'',
+  note:'Tự chuyển từ dữ liệu sản xuất nội dung phiên bản trước.'
+ }));
+}state.profile=x.profile||{};state.logo=x.logo||'';return x}catch(e){return {}}}
+function persist(){localStorage.setItem(STORE,JSON.stringify({data:state.data,logs:state.logs.slice(0,100),history:state.history.slice(0,500),shares:state.shares,profile:state.profile,logo:state.logo}))}
+function rows(k){return state.data[k]||(state.data[k]=[])}function log(s){state.logs.unshift({text:s,at:new Date().toLocaleString('vi-VN')});persist()}
+function auditChange(moduleName,recordId,recordName,field,oldValue,newValue){
+ if(String(oldValue??'')===String(newValue??''))return;
+ let now=Date.now(),last=state.history[0];
+ if(last&&last.module===moduleName&&last.recordId===recordId&&last.field===field&&now-last.ts<2000){last.newValue=String(newValue??'');last.at=new Date().toLocaleString('vi-VN');last.ts=now;}
+ else state.history.unshift({module:moduleName,recordId,recordName,field,oldValue:String(oldValue??''),newValue:String(newValue??''),user:state.profile.name||state.user||'Người dùng',at:new Date().toLocaleString('vi-VN'),ts:now});
+ state.history=state.history.slice(0,500);
+}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function dateKeyLocal(d){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
+function money(n){return Number(n||0).toLocaleString('vi-VN')+' đ'}function statusTag(s){let c=/Hoàn thành|Đã thanh toán|Đã đối trừ|Đã đăng|Đã xác nhận|Hoàn tất/.test(s)?'green':/Trễ hạn|Tạm dừng|Khẩn/.test(s)?'red':/Chờ|Đang|Dự kiến|Lên kế hoạch/.test(s)?'amber':'';return `<span class="tag ${c}">${esc(s||'—')}</span>`}
+function showModal(title,html){document.getElementById('modalTitle').textContent=title;document.getElementById('modalBody').innerHTML=html;document.getElementById('modal').classList.remove('hidden')}
+function closeModal(){document.getElementById('modal').classList.add('hidden')}
+function nav(){let groups=[['TỔNG QUAN',['dashboard']],['ĐIỀU HÀNH',['projects','tasks','calendar','partners']],['TRUYỀN THÔNG',['contentPlan','content','reports','pressReport']],['TÀI CHÍNH',['budget','contracts','payments']],['TÀI SẢN',['inventory']],['HỆ THỐNG',['permissions','settings']]];let h='';groups.forEach(([g,ks])=>{h+=`<div class="nav-label">${g}</div>`;ks.forEach(k=>{let title=k==='dashboard'?'Dashboard':k==='permissions'?'Chia sẻ & phân quyền':k==='settings'?'Cài đặt & dữ liệu':k==='pressReport'?'Hiệu quả báo chí':modules[k].title,ico=k==='dashboard'?'▦':k==='permissions'?'🔐':k==='settings'?'⚙':k==='pressReport'?'📰':modules[k].icon;h+=`<button data-view="${k}" class="${state.view===k?'active':''}"><span class="ico">${ico}</span>${title}</button>`})});document.getElementById('nav').innerHTML=h;document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>go(b.dataset.view))}
+function go(k){state.view=k;nav();document.getElementById('sidebar').classList.remove('open');let scrim=document.getElementById('mobileScrim');if(scrim)scrim.style.display='none';render()}
+function render(){let v=document.getElementById('view');let tt=document.getElementById('topTitle');if(tt){let titles={dashboard:'Tổng quan hoạt động',contentPlan:'Kế hoạch nội dung',calendar:'Lịch công việc',reports:'Hiệu quả chuyên trang',pressReport:'Hiệu quả báo chí',permissions:'Phân quyền truy cập',settings:'Cài đặt & dữ liệu'};tt.textContent=titles[state.view]||(modules[state.view]?.title||'');}if(state.view==='dashboard')dashboard(v);else if(state.view==='contentPlan')contentPlanPage(v);else if(state.view==='calendar')calendar(v);else if(state.view==='reports')reports(v);else if(state.view==='pressReport')pressReport(v);else if(state.view==='permissions')permissions(v);else if(state.view==='settings')settings(v);else modulePage(v,state.view)}
+function dashboard(v){let p=rows('projects'),t=rows('tasks'),c=rows('content'),b=rows('budget'),active=p.filter(x=>x.status==='Đang triển khai').length,doing=t.filter(x=>x.status==='Đang thực hiện').length,published=c.filter(x=>x.status==='Đã đăng').length,today=dateKeyLocal(new Date()),tomorrow=new Date(Date.now()+86400000).toISOString().slice(0,10),due=t.filter(x=>x.due===today&&x.status!=='Hoàn thành'),doneToday=t.filter(x=>x.status==='Hoàn thành'&&(x.completedDate===today||(!x.completedDate&&x.due===today))),tomorrowTasks=t.filter(x=>x.due===tomorrow&&x.status!=='Hoàn thành'),upcoming=rows('calendar').filter(x=>x.date>=today).sort((a,b)=>a.date.localeCompare(b.date)).slice(0,5);v.innerHTML=`<div class="page-head"><div><p>Tổng quan dự án, công việc và hoạt động PR - Branding.</p></div><div class="actions"><button class="btn secondary" onclick="go('calendar')">＋ Tạo lịch</button><button class="btn" onclick="go('projects')">＋ Thêm dự án</button></div></div><div class="grid stats" style="grid-template-columns:repeat(3,minmax(0,1fr))">${[['Dự án đang triển khai',active,'🗂','Trên tổng '+p.length+' dự án'],['Công việc đang thực hiện',doing,'☑','Tổng '+t.length+' đầu việc'],['Nội dung truyền thông',published,'📰','Đã đăng · Tổng '+c.length+' nội dung']].map(a=>`<div class="card"><div class="stat-label">${a[0]} <span>${a[2]}</span></div><div class="stat-value">${a[1]}</div><div class="stat-note">${a[3]}</div></div>`).join('')}</div><div class="grid two"><div class="card"><h3>Danh mục dự án</h3>${projectBars(p)}</div><div class="card"><h3>Việc cần chú ý hôm nay</h3>${due.length?`<ul class="list">${due.map(x=>`<li><span>${esc(x.name)}<small>${esc(x.owner||'Chưa phân công')} · Hạn ${esc(x.due)}</small></span>${statusTag(x.status)}</li>`).join('')}</ul>`:'<div class="empty">Không có công việc đến hạn hôm nay.</div>'}</div><div class="card"><h3>Kết quả hoàn thành hôm nay</h3><b style="font-size:25px;color:var(--green)">${doneToday.length} công việc</b>${doneToday.map(x=>`<div class="section-note" style="padding:5px 0">✓ ${esc(x.name)}</div>`).join('')||'<p class="section-note">Chưa ghi nhận công việc hoàn thành hôm nay.</p>'}</div><div class="card"><h3>Nhắc việc ngày mai</h3><b>${tomorrowTasks.length} công việc cần thực hiện</b>${tomorrowTasks.slice(0,5).map(x=>`<div class="section-note" style="padding:5px 0">• ${esc(x.name)} · ${esc(x.owner||'Chưa phân công')}</div>`).join('')||'<p class="section-note">Chưa có công việc đến hạn ngày mai.</p>'}</div><div class="card"><h3>Lịch sắp tới</h3>${upcoming.length?`<ul class="list">${upcoming.map(x=>`<li><span>${esc(x.title)}<small>${esc(x.date)} ${esc(x.time||'')} · ${esc(x.kind)}</small></span>${statusTag(x.kind)}</li>`).join('')}</ul>`:'<div class="empty">Chưa có lịch công việc, họp hoặc sự kiện.</div>'}</div></div>`}
+function projectBars(p){if(!p.length)return '<div class="empty">Chưa có dự án. Thêm dự án để xem tổng quan.</div>';let types={};p.forEach(x=>types[x.type||'Khác']=(types[x.type||'Khác']||0)+1);return Object.entries(types).map(([k,n])=>`<div class="barline"><span>${esc(k)}</span><b>${n}</b></div><div class="progress"><i style="width:${n/p.length*100}%"></i></div>`).join('')}
+function modulePage(v,k){let m=modules[k],data=rows(k);v.innerHTML=`<div class="page-head"><div><h1>${m.title}</h1><p>${m.desc}</p></div><div class="actions"><button class="btn secondary" onclick="downloadCSV('${k}')">↓ Xuất Excel</button><button class="btn secondary" onclick="document.getElementById('excelFile').dataset.module='${k}';document.getElementById('excelFile').click()">↑ Nhập Excel/CSV</button><button class="btn" onclick="editRecord('${k}')">＋ Thêm mới</button></div></div><div class="toolbar"><input id="searchRows" placeholder="Tìm kiếm trong danh sách…"><select id="filterStatus"><option value="">Tất cả trạng thái</option>${[...new Set(data.map(x=>x.status).filter(Boolean))].map(s=>`<option>${esc(s)}</option>`).join('')}</select><button class="btn ghost small" onclick="shareItem('${k}')">Chia sẻ phân hệ</button></div><div class="card table-wrap"><table><thead><tr>${m.fields.map(f=>`<th>${f[1]}</th>`).join('')}<th>Thao tác</th></tr></thead><tbody id="dataRows"></tbody></table></div><p class="hint">Hỗ trợ nhập/xuất Excel .xlsx và CSV UTF-8. Chức năng Excel sử dụng thư viện SheetJS qua CDN, cần kết nối internet khi mở file.</p>`;drawRows(k);document.getElementById('searchRows').oninput=()=>drawRows(k);document.getElementById('filterStatus').onchange=()=>drawRows(k)}
+function drawRows(k){let m=modules[k],q=(document.getElementById('searchRows')?.value||'').toLowerCase(),f=document.getElementById('filterStatus')?.value||'',data=rows(k).filter(o=>JSON.stringify(o).toLowerCase().includes(q)&&(!f||o.status===f));let body=document.getElementById('dataRows');if(!body)return;body.innerHTML=data.length?data.map(o=>`<tr>${m.fields.map(x=>`<td>${x[2]==='planref'?esc(rows('contentPlan').find(p=>p.id===o.planId)?.name||'—'):x[2]==='attachment'?(o.attachment?.data?`<a href="${o.attachment.data}" download="${esc(o.attachment.name||'tai-lieu')}">Tải file ↧</a>`:o.attachment?.url?`<a href="${esc(o.attachment.url)}" target="_blank" rel="noopener">Mở tài liệu ↗</a>`:'—'):x[0]==='status'||x[0]==='productionStatus'?statusTag(o[x[0]]):/amount|paid|budget|planned|approved|actual|variance|value|offset/i.test(x[0])?money(o[x[0]]):esc(o[x[0]]||'—')}</td>`).join('')}<td><div class="row-actions"><button class="icon-btn" onclick="editRecord('${k}','${o.id}')">Sửa</button><button class="icon-btn" onclick="shareItem('${k}','${o.id}')">Chia sẻ</button><button class="icon-btn" onclick="deleteRecord('${k}','${o.id}')">Xóa</button></div></td></tr>`).join(''):`<tr><td colspan="${m.fields.length+1}"><div class="empty">Chưa có dữ liệu phù hợp.</div></td></tr>`}
+function editRecord(k,id){
+ let m=modules[k],old=rows(k).find(x=>x.id===id)||{},isNew=!id,obj=old,formHtml=`<form id="recordForm"><div class="form-grid">${m.fields.map(f=>{let val=esc(old[f[0]]||''),field=f[2]==='attachment'?`<div class="attachment-field"><input type="file" data-attachment="${f[0]}" accept=".doc,.docx,.pdf,.xls,.xlsx,.ppt,.pptx,.txt"><small>${old[f[0]]?.name?`Đã đính kèm: ${esc(old[f[0]].name)}`:'Chọn file tài liệu (tối đa 2 MB)'}</small><input name="attachmentUrl" type="url" placeholder="Hoặc dán link Google Drive / SharePoint..." value="${esc(old[f[0]]?.url||'')}"></div>`:f[2]==='select'?`<select name="${f[0]}"><option value="">-- Chọn --</option>${f[3].split('|').map(o=>`<option ${old[f[0]]===o?'selected':''}>${esc(o)}</option>`).join('')}</select>`:f[2]==='textarea'?`<textarea name="${f[0]}" rows="3">${val}</textarea>`:`<input name="${f[0]}" type="${f[2]}" value="${val}" ${f[0]==='name'||f[0]==='title'?'required':''}>`;return `<div class="field ${f[2]==='textarea'?'wide':''}"><label>${f[1]}</label>${field}</div>`}).join('')}</div><div class="save-state" id="recordSaveState">Mọi thay đổi sẽ tự động lưu khi nhập.</div><div class="actions" style="justify-content:flex-end;margin-top:15px"><button type="button" class="btn ghost" onclick="closeModal()">Đóng</button><button class="btn">Hoàn tất</button></div></form>`;
+ showModal((id?'Cập nhật · ':'Thêm mới · ')+m.title,formHtml);
+ let form=document.getElementById('recordForm'),saveState=document.getElementById('recordSaveState');
+ form.addEventListener('input',e=>{
+   let field=e.target.name;if(!field)return;
+   if(isNew){obj={id:k+'_'+Date.now()};rows(k).unshift(obj);isNew=false;}
+   if(field==='attachmentUrl'){if(!obj.attachment)obj.attachment={};let before=obj.attachment.url||'';obj.attachment.url=e.target.value;auditChange(m.title,obj.id,obj.name||'Bản ghi mới','Link tài liệu',before,e.target.value);persist();saveState.textContent='Đã tự động lưu · '+new Date().toLocaleTimeString('vi-VN');return;}
+   let before=obj[field]??'',after=e.target.value;
+   obj[field]=after;
+   auditChange(m.title,obj.id,obj.name||obj.title||'Bản ghi mới',field,before,after);
+   persist();
+   saveState.textContent='Đã tự động lưu · '+new Date().toLocaleTimeString('vi-VN');
+ });
+ form.addEventListener('change',e=>{
+   let field=e.target.name;if(!field)return;
+   if(isNew){obj={id:k+'_'+Date.now()};rows(k).unshift(obj);isNew=false;}
+   let before=obj[field]??'',after=e.target.value;obj[field]=after;
+   auditChange(m.title,obj.id,obj.name||obj.title||'Bản ghi mới',field,before,after);
+   persist();saveState.textContent='Đã tự động lưu · '+new Date().toLocaleTimeString('vi-VN');
+ });
+ form.querySelectorAll('input[data-attachment]').forEach(input=>input.addEventListener('change',e=>{
+  let file=e.target.files[0];if(!file)return;
+  if(file.size>2*1024*1024){alert('File tối đa 2 MB ở phiên bản HTML này. Với file lớn hơn nên dùng link Google Drive/SharePoint.');e.target.value='';return}
+  let reader=new FileReader();reader.onload=()=>{let before=obj.attachment?.name||'',attachment={name:file.name,type:file.type,data:reader.result};if(isNew){obj={id:k+'_'+Date.now()};rows(k).unshift(obj);isNew=false;}obj.attachment=attachment;auditChange(m.title,obj.id,obj.name||obj.title||'Bản ghi mới','File đính kèm',before,file.name);persist();saveState.textContent='Đã tự động lưu file · '+new Date().toLocaleTimeString('vi-VN');};reader.readAsDataURL(file);
+ }));
+ form.onsubmit=e=>{e.preventDefault();if(isNew){obj={id:k+'_'+Date.now()};m.fields.forEach(f=>{if(f[2]==='attachment'){obj[f[0]]=obj[f[0]]||null;}else if(form.elements[f[0]])obj[f[0]]=form.elements[f[0]].value;});rows(k).unshift(obj);log('Thêm mới '+m.title+': '+(obj.name||obj.title||''));}else log('Đã cập nhật '+m.title+': '+(obj.name||obj.title||''));persist();closeModal();render()};
+}
+function deleteRecord(k,id){if(confirm('Bạn chắc chắn muốn xóa dữ liệu này?')){state.data[k]=rows(k).filter(x=>x.id!==id);log('Xóa dữ liệu trong '+modules[k].title);persist();render()}}
+function calendar(v){let d=state.calDate,year=d.getFullYear(),month=d.getMonth(),first=new Date(year,month,1),start=new Date(year,month,1-first.getDay()),today=dateKeyLocal(new Date()),events=rows('calendar');v.innerHTML=`<div class="page-head"><div><h1>Lịch công việc</h1><p>Theo dõi lịch họp, sự kiện, deadline và công việc theo tuần / tháng.</p></div><div class="actions"><button class="btn secondary" onclick="exportICS()">↓ Đồng bộ lịch (.ics)</button><button class="btn" onclick="editRecord('calendar')">＋ Tạo lịch</button></div></div><div class="card" style="margin-top:18px"><div class="calendar-head"><div class="actions"><button class="btn ghost small" onclick="changeMonth(-1)">‹</button><b>${d.toLocaleDateString('vi-VN',{month:'long',year:'numeric'})}</b><button class="btn ghost small" onclick="changeMonth(1)">›</button><button class="btn secondary small" onclick="state.calDate=new Date();render()">Hôm nay</button></div><div class="actions"><button class="btn ${state.calMode==='month'?'':'secondary'} small" onclick="state.calMode='month';render()">Tháng</button><button class="btn ${state.calMode==='week'?'':'secondary'} small" onclick="state.calMode='week';render()">Tuần</button></div></div><div class="calendar-grid">${['CN','T2','T3','T4','T5','T6','T7'].map(x=>`<div class="day" style="min-height:30px;background:#fafbfd;font-weight:700">${x}</div>`).join('')}${Array.from({length:state.calMode==='week'?7:42},(_,i)=>{let base=state.calMode==='week'?new Date(d.getFullYear(),d.getMonth(),d.getDate()-d.getDay()):start;let day=new Date(base);day.setDate(start.getDate()+i);let key=dateKeyLocal(day),list=events.filter(e=>e.date===key);return `<div class="day" style="${day.getMonth()!==month?'opacity:.35':''}"><div class="num">${day.getDate()} ${key===today?'· Hôm nay':''}</div>${list.map(e=>`<div class="event ${e.kind==='Deadline'?'deadline':e.kind==='Cuộc họp'?'meeting':''}" title="${esc(e.title)}" onclick="editRecord('calendar','${e.id}')">${esc((e.time?e.time+' ':'')+e.title)}</div>`).join('')}</div>`}).join('')}</div></div><p class="hint">Đồng bộ điện thoại: tải file .ics rồi mở bằng Apple Calendar hoặc Google Calendar. Đồng bộ tự động hai chiều cần kết nối tài khoản lịch và backend.</p>`}
+
+function contentPlanPage(v){
+ let d=state.calDate,year=d.getFullYear(),month=d.getMonth(),first=new Date(year,month,1),start=new Date(year,month,1-first.getDay()),today=dateKeyLocal(new Date()),plans=rows('contentPlan');
+ let offset=state.calMode==='week'?new Date(d.getFullYear(),d.getMonth(),d.getDate()-d.getDay()):start;
+ let count=state.calMode==='week'?7:42;
+ v.innerHTML=`<div class="page-head"><div><h1>Kế hoạch nội dung</h1><p>Lập lịch sản xuất theo tháng / tuần; dữ liệu kế hoạch được liên kết với tiến độ sản xuất.</p></div><div class="actions"><button class="btn secondary" onclick="downloadCSV('contentPlan')">↓ Xuất Excel</button><button class="btn secondary" onclick="document.getElementById('excelFile').dataset.module='contentPlan';document.getElementById('excelFile').click()">↑ Nhập Excel/CSV</button><button class="btn" onclick="editRecord('contentPlan')">＋ Thêm kế hoạch</button></div></div>
+ <div class="card" style="margin-top:18px"><div class="calendar-head"><div class="actions"><button class="btn ghost small" onclick="changePlanPeriod(-1)">‹</button><b>${state.calMode==='week'?'Tuần của ':''}${d.toLocaleDateString('vi-VN',{month:'long',year:'numeric'})}</b><button class="btn ghost small" onclick="changePlanPeriod(1)">›</button><button class="btn secondary small" onclick="state.calDate=new Date();render()">Hôm nay</button></div><div class="actions"><button class="btn ${state.calMode==='month'?'':'secondary'} small" onclick="state.calMode='month';render()">Tháng</button><button class="btn ${state.calMode==='week'?'':'secondary'} small" onclick="state.calMode='week';render()">Tuần</button></div></div>
+ <div class="calendar-grid">${['CN','T2','T3','T4','T5','T6','T7'].map(x=>`<div class="day" style="min-height:30px;background:#fafbfd;font-weight:700">${x}</div>`).join('')}${Array.from({length:count},(_,i)=>{let day=new Date(offset);day.setDate(offset.getDate()+i);let key=dateKeyLocal(day),items=plans.filter(x=>x.planDate===key);return `<div class="day" style="${state.calMode==='month'&&day.getMonth()!==month?'opacity:.35':''}"><div class="num">${day.getDate()} ${key===today?'· Hôm nay':''}</div>${items.map(x=>`<div class="event" title="${esc(x.name)}" onclick="editRecord('contentPlan','${x.id}')"><b>${esc(x.name)}</b><br>${esc(x.format||'')} · ${esc(x.owner||'Chưa phân công')}</div>`).join('')}<button class="icon-btn" style="font-size:10px;margin-top:3px" onclick="quickPlan('${key}')">＋</button></div>`}).join('')}</div></div>
+ <h2>Danh sách kế hoạch</h2><div class="card table-wrap"><table><thead><tr>${modules.contentPlan.fields.map(f=>`<th>${f[1]}</th>`).join('')}<th>Thao tác</th></tr></thead><tbody>${plans.length?plans.slice().sort((a,b)=>(a.planDate||'').localeCompare(b.planDate||'')).map(x=>`<tr>${modules.contentPlan.fields.map(f=>`<td>${f[0]==='status'?statusTag(x[f[0]]):esc(x[f[0]]||'—')}</td>`).join('')}<td><button class="icon-btn" onclick="editRecord('contentPlan','${x.id}')">Sửa</button><button class="icon-btn" onclick="deleteRecord('contentPlan','${x.id}')">Xóa</button></td></tr>`).join(''):'<tr><td colspan="10"><div class="empty">Chưa có kế hoạch nội dung.</div></td></tr>'}</tbody></table></div>`;
+}
+function changePlanPeriod(n){let d=state.calDate;state.calDate=state.calMode==='week'?new Date(d.getFullYear(),d.getMonth(),d.getDate()+n*7):new Date(d.getFullYear(),d.getMonth()+n,1);render()}
+function quickPlan(date){editRecord('contentPlan');setTimeout(()=>{let f=document.querySelector('#recordForm [name="planDate"]');if(f)f.value=date},0)}
+
+function changeMonth(n){state.calDate=new Date(state.calDate.getFullYear(),state.calDate.getMonth()+n,1);render()}
+function exportICS(){let events=rows('calendar');let lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//NSG PR Branding//VI'];events.forEach(e=>{if(!e.date)return;let dt=e.date.replaceAll('-','')+'T'+(e.time||'09:00').replace(':','')+'00';lines.push('BEGIN:VEVENT','UID:'+e.id+'@nsg-prbranding','DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,''),'DTSTART;TZID=Asia/Ho_Chi_Minh:'+dt,'SUMMARY:'+String(e.title||'Lịch NSG').replace(/[,;\\]/g,' '),'DESCRIPTION:'+String(e.note||'').replace(/[,;\\]/g,' '),'END:VEVENT')});lines.push('END:VCALENDAR');downloadBlob(lines.join('\r\n'),'lich-pr-branding-nsg.ics','text/calendar;charset=utf-8')}
+
+
+function reports(v){
+ let data=rows('specialMetrics').slice().sort((a,b)=>(b.month||'').localeCompare(a.month||''));
+ let selected=state.reportMonth||'';
+ let filtered=data.filter(x=>!selected||x.month===selected);
+ let sum=k=>filtered.reduce((a,x)=>a+(Number(x[k])||0),0);
+ let pageViews=sum('pageViews'),articleViews=sum('articleViews'),bannerViews=sum('bannerViews');
+ let ctrRows=filtered.filter(x=>x.bannerCTR!==''&&x.bannerCTR!=null),avgCTR=ctrRows.length?ctrRows.reduce((a,x)=>a+(Number(x.bannerCTR)||0),0)/ctrRows.length:0;
+ let months=[...new Set(data.map(x=>x.month).filter(Boolean))].sort().reverse();
+ v.innerHTML=`<div class="page-head"><div><h1>Hiệu quả chuyên trang</h1><p>Tổng hợp số liệu được ghi nhận theo tháng tại các chuyên trang truyền thông.</p></div><div class="actions"><button class="btn secondary" onclick="downloadCSV('specialMetrics')">↓ Xuất Excel</button><button class="btn" onclick="editRecord('specialMetrics')">＋ Nhập số liệu tháng</button></div></div>
+ <div class="toolbar"><label>Tháng báo cáo</label><select id="reportMonthFilter"><option value="">Tất cả các tháng</option>${months.map(m=>`<option value="${esc(m)}" ${selected===m?'selected':''}>${esc(m)}</option>`).join('')}</select></div>
+ <div class="grid stats">${[['Pageview chuyên trang',pageViews],['View bài viết / video',articleViews],['CTR banner',avgCTR.toFixed(2)+'%'],['View banner',bannerViews]].map(a=>`<div class="card"><div class="stat-label">${a[0]}</div><div class="stat-value">${typeof a[1]==='number'?a[1].toLocaleString('vi-VN'):a[1]}</div></div>`).join('')}</div>
+ <h2>Chi tiết số liệu theo tháng</h2><div class="card table-wrap"><table><thead><tr><th>Tháng</th><th>Chuyên trang / đơn vị</th><th>Pageview chuyên trang</th><th>View bài viết / video</th><th>CTR banner (%)</th><th>View banner</th><th>Ghi chú</th><th>Thao tác</th></tr></thead><tbody>${filtered.length?filtered.map(x=>`<tr><td>${esc(x.month||'—')}</td><td>${esc(x.outlet||'—')}</td><td>${Number(x.pageViews||0).toLocaleString('vi-VN')}</td><td>${Number(x.articleViews||0).toLocaleString('vi-VN')}</td><td>${x.bannerCTR!==''&&x.bannerCTR!=null?Number(x.bannerCTR).toFixed(2)+'%':'—'}</td><td>${Number(x.bannerViews||0).toLocaleString('vi-VN')}</td><td>${esc(x.note||'—')}</td><td><button class="icon-btn" onclick="editRecord('specialMetrics','${x.id}')">Sửa</button><button class="icon-btn" onclick="deleteRecord('specialMetrics','${x.id}')">Xóa</button></td></tr>`).join(''):'<tr><td colspan="8"><div class="empty">Chưa có số liệu. Hãy nhập báo cáo theo tháng.</div></td></tr>'}</tbody></table></div>
+ <p class="hint">CTR được nhập theo đơn vị phần trăm (%). Nên nhập riêng từng chuyên trang / đơn vị trong từng tháng để đối chiếu và tổng hợp chính xác.</p>`;
+ document.getElementById('reportMonthFilter').onchange=e=>{state.reportMonth=e.target.value;render()};
+}
+
+
+function pressReport(v){
+ let all=rows('pressCoverage').slice().sort((a,b)=>(b.publishDate||'').localeCompare(a.publishDate||''));
+ let month=state.pressMonth||'',event=state.pressEvent||'',query=(state.pressQuery||'').toLowerCase();
+ let data=all.filter(x=>(!month||(x.publishDate||'').slice(0,7)===month)&&(!event||x.event===event)&&(!query||JSON.stringify(x).toLowerCase().includes(query)));
+ let earned=data.filter(x=>x.type==='Earned').length,paid=data.filter(x=>x.type==='Paid').length,owned=data.filter(x=>x.type==='Owned').length;
+ let outlets=new Set(data.map(x=>(x.outlet||'').trim()).filter(Boolean)).size;
+ let events=[...new Set(all.map(x=>x.event).filter(Boolean))].sort();
+ let months=[...new Set(all.map(x=>(x.publishDate||'').slice(0,7)).filter(Boolean))].sort().reverse();
+ v.innerHTML=`<div class="page-head"><div><h1>Hiệu quả báo chí</h1><p>Dashboard tổng hợp toàn bộ bài đăng, hình thức truyền thông và độ phủ các đơn vị báo chí / truyền thông.</p></div><div class="actions"><button class="btn secondary" onclick="downloadCSV('pressCoverage')">↓ Xuất Excel</button><button class="btn secondary" onclick="document.getElementById('excelFile').dataset.module='pressCoverage';document.getElementById('excelFile').click()">↑ Nhập Excel/CSV</button><button class="btn" onclick="editRecord('pressCoverage')">＋ Thêm bài đăng</button></div></div>
+ <div class="toolbar"><select id="pressMonth"><option value="">Tất cả tháng</option>${months.map(m=>`<option value="${m}" ${m===month?'selected':''}>${m}</option>`).join('')}</select><select id="pressEvent"><option value="">Tất cả sự kiện</option>${events.map(e=>`<option ${e===event?'selected':''}>${esc(e)}</option>`).join('')}</select><input id="pressSearch" placeholder="Tìm tên bài, báo, bác sĩ, chuyên khoa..." value="${esc(state.pressQuery||'')}"></div>
+ <div class="grid stats">${[['Tổng số bài đăng',data.length],['Earned',earned],['Paid',paid],['Owned',owned],['Báo / đơn vị truyền thông',outlets]].map(a=>`<div class="card"><div class="stat-label">${a[0]}</div><div class="stat-value">${a[1].toLocaleString('vi-VN')}</div></div>`).join('')}</div>
+ <h2>Danh sách bài đăng báo chí & truyền thông</h2><div class="card table-wrap"><table><thead><tr><th>Tên bài viết</th><th>Link đăng</th><th>Ngày đăng</th><th>Đơn vị đăng tải</th><th>Loại hình</th><th>Hình thức</th><th>Thể loại</th><th>Sự kiện</th><th>Chuyên khoa / bệnh viện được nhắc</th><th>Bác sĩ được nhắc</th><th>Thao tác</th></tr></thead><tbody>${data.length?data.map(x=>`<tr><td>${esc(x.title||'—')}</td><td>${x.url?`<a href="${esc(x.url)}" target="_blank" rel="noopener">Mở bài ↗</a>`:'—'}</td><td>${esc(x.publishDate||'—')}</td><td>${esc(x.outlet||'—')}</td><td>${esc(x.mediaType||'—')}</td><td>${statusTag(x.type||'—')}</td><td>${esc(x.genre||'—')}</td><td>${esc(x.event||'—')}</td><td>${esc(x.mentions||'—')}</td><td>${esc(x.doctors||'—')}</td><td><div class="row-actions"><button class="icon-btn" onclick="editRecord('pressCoverage','${x.id}')">Sửa</button><button class="icon-btn" onclick="deleteRecord('pressCoverage','${x.id}')">Xóa</button></div></td></tr>`).join(''):'<tr><td colspan="11"><div class="empty">Chưa có bài đăng phù hợp. Hãy thêm bài đăng hoặc nhập danh sách từ Excel.</div></td></tr>'}</tbody></table></div>
+ <p class="hint">Mỗi bài đăng là một bản ghi riêng. Có thể nhập hàng loạt bằng Excel/CSV; nên thống nhất tên báo, loại hình và hình thức để dashboard đếm số lượng chính xác.</p>`;
+ document.getElementById('pressMonth').onchange=e=>{state.pressMonth=e.target.value;render()};
+ document.getElementById('pressEvent').onchange=e=>{state.pressEvent=e.target.value;render()};
+ document.getElementById('pressSearch').oninput=e=>{state.pressQuery=e.target.value;let pos=e.target.selectionStart;pressReport(v);let el=document.getElementById('pressSearch');el.focus();el.setSelectionRange(pos,pos)};
+}
+
+function permissions(v){v.innerHTML=`<div class="page-head"><div><h1>Chia sẻ & phân quyền</h1><p>Cấu hình quyền xem, bình luận hoặc chỉnh sửa theo email và phạm vi dữ liệu.</p></div><button class="btn" onclick="addShare()">＋ Mời người dùng</button></div><div class="notice">Bản HTML hiện tại chỉ lưu cấu hình phân quyền trên trình duyệt này. Chưa thể xác thực email người được mời hoặc bảo vệ dữ liệu giữa nhiều thiết bị. Cần backend và cơ chế đăng nhập tập trung để bật phân quyền thật.</div><div class="card table-wrap"><table><thead><tr><th>Email</th><th>Phạm vi</th><th>Quyền</th><th>Ghi chú</th><th></th></tr></thead><tbody>${state.shares.length?state.shares.map((x,i)=>`<tr><td>${esc(x.email)}</td><td>${esc(x.scope)}</td><td>${statusTag(x.permission)}</td><td>${esc(x.note||'—')}</td><td><button class="icon-btn" onclick="removeShare(${i})">Xóa</button></td></tr>`).join(''):'<tr><td colspan="5"><div class="empty">Chưa có lời mời chia sẻ.</div></td></tr>'}</tbody></table></div><h2>Ma trận quyền đề xuất</h2><div class="card table-wrap"><table><thead><tr><th>Quyền</th><th>Xem</th><th>Bình luận</th><th>Thêm / sửa</th><th>Xóa / quản trị</th></tr></thead><tbody><tr><td>Viewer</td><td>✓</td><td>—</td><td>—</td><td>—</td></tr><tr><td>Commenter</td><td>✓</td><td>✓</td><td>—</td><td>—</td></tr><tr><td>Editor</td><td>✓</td><td>✓</td><td>✓</td><td>—</td></tr><tr><td>Admin</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr></tbody></table></div>`}
+function addShare(){showModal('Mời chia sẻ theo email',`<form id="shareForm"><div class="field"><label>Email người được mời</label><input name="email" type="email" required placeholder="dongnghiep@benhviennsg.com"></div><div class="field"><label>Phạm vi chia sẻ</label><select name="scope"><option value="Toàn bộ hệ thống">Toàn bộ hệ thống</option>${Object.entries(modules).map(([k,m])=>`<option>${m.title}</option>`).join('')}</select></div><div class="field"><label>Quyền truy cập</label><select name="permission"><option>Viewer</option><option>Commenter</option><option>Editor</option></select></div><div class="field"><label>Ghi chú</label><input name="note" placeholder="Ví dụ: phụ trách nội dung báo chí"></div><div class="actions" style="justify-content:flex-end"><button type="button" class="btn ghost" onclick="closeModal()">Hủy</button><button class="btn">Lưu cấu hình</button></div></form>`);document.getElementById('shareForm').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target);state.shares.push(Object.fromEntries(f));persist();closeModal();render()}}
+function removeShare(i){state.shares.splice(i,1);persist();render()}
+function shareItem(k,id){let scope=modules[k].title+(id?' · mục dữ liệu':'');showModal('Chia sẻ: '+scope,`<p class="section-note">Chọn email và quyền. Đây là cấu hình minh họa trên thiết bị hiện tại; chưa gửi lời mời thật.</p><form id="shareOne"><div class="field"><label>Email</label><input type="email" name="email" required></div><div class="field"><label>Quyền</label><select name="permission"><option>Viewer</option><option>Commenter</option><option>Editor</option></select></div><div class="actions" style="justify-content:flex-end"><button type="button" class="btn ghost" onclick="closeModal()">Hủy</button><button class="btn">Lưu</button></div></form>`);document.getElementById('shareOne').onsubmit=e=>{e.preventDefault();let f=new FormData(e.target);state.shares.push({email:f.get('email'),permission:f.get('permission'),scope,note:'Chia sẻ nhanh'});persist();closeModal();alert('Đã lưu cấu hình demo. Để người khác truy cập cần triển khai backend.')}}
+function settings(v){
+ v.innerHTML=`<div class="page-head"><div><h1>Cài đặt & dữ liệu</h1><p>Hồ sơ cá nhân, lịch sử điều chỉnh và sao lưu dữ liệu.</p></div></div>
+ <div class="grid two"><div class="card"><h3>Hồ sơ cá nhân</h3><form id="profileForm">
+ <div class="field"><label>Họ và tên</label><input name="name" value="${esc(state.profile.name||'')}" required></div>
+ <div class="field"><label>Chức vụ</label><input name="job" value="${esc(state.profile.job||'')}"></div>
+ <div class="field"><label>Phòng ban</label><input name="department" value="${esc(state.profile.department||'Phòng PR - Branding')}"></div>
+ <div class="field"><label>Email / Tên đăng nhập</label><input value="${esc(state.user||'')}" disabled></div>
+ <div class="save-state" id="profileSaveState">Dữ liệu được tự động lưu khi nhập.</div></form>
+ <hr style="border:0;border-top:1px solid var(--line);margin:18px 0"><h3>Logo đơn vị</h3>
+ <p class="section-note">Tải logo hình vuông (PNG/JPG/WebP). Logo hiển thị đồng nhất tại màn hình đăng nhập và ứng dụng.</p>
+ <div class="actions" style="align-items:center"><button type="button" id="logoPreview" class="logo-upload-placeholder preview" aria-label="Logo bệnh viện"><span>＋</span><small>Logo</small></button><input type="file" id="logoUpload" accept="image/png,image/jpeg,image/webp" style="max-width:240px"></div>
+ <button type="button" class="btn secondary small" id="removeLogo" style="margin-top:10px">Gỡ logo</button></div>
+ <div class="card"><h3>Lưu trữ & sao lưu</h3><p class="section-note">Mỗi thay đổi được lưu tự động trên thiết bị hiện tại. Hãy sao lưu định kỳ để tránh mất dữ liệu khi đổi trình duyệt hoặc thiết bị.</p>
+ <div class="actions"><button class="btn" onclick="backupJSON()">↓ Sao lưu toàn bộ (JSON)</button><button class="btn secondary" onclick="document.getElementById('restoreFile').click()">↑ Khôi phục JSON</button><input type="file" id="restoreFile" accept=".json" class="hidden"></div>
+ <div class="sync-warning" style="margin-top:18px"><b>Đồng bộ nhiều người dùng</b><p class="section-note">Chưa kết nối máy chủ chung. Chia sẻ file HTML không tự chia sẻ dữ liệu; cần triển khai cơ sở dữ liệu tập trung và xác thực người dùng để mọi người thấy dữ liệu mới nhất.</p></div>
+ <hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><button class="btn danger" onclick="logout()">Đăng xuất</button></div></div>
+ <h2>Lịch sử điều chỉnh gần đây</h2><div class="card table-wrap"><table><thead><tr><th>Thời gian</th><th>Người thực hiện</th><th>Phân hệ</th><th>Nội dung</th><th>Trước khi sửa</th><th>Sau khi sửa</th></tr></thead><tbody>
+ ${state.history.length?state.history.slice(0,100).map(x=>`<tr><td>${esc(x.at)}</td><td>${esc(x.user)}</td><td>${esc(x.module)}</td><td>${esc(x.recordName)} · ${esc(x.field)}</td><td>${esc(x.oldValue||'—')}</td><td>${esc(x.newValue||'—')}</td></tr>`).join(''):'<tr><td colspan="6"><div class="empty">Chưa có lịch sử điều chỉnh.</div></td></tr>'}</tbody></table></div>
+ <input type="file" id="restoreFile" accept=".json" class="hidden">
+ <h2>Kết nối hệ thống</h2><div class="grid three"><div class="card"><b>Đăng nhập & phân quyền</b><p class="section-note">Cần xác thực phía máy chủ và kiểm soát quyền ở backend.</p></div><div class="card"><b>Lịch & nhắc việc</b><p class="section-note">Có thể kết nối Google Calendar hoặc Microsoft Graph; Apple Calendar nhận lịch .ics.</p></div><div class="card"><b>Dữ liệu dùng chung</b><p class="section-note">Cần database tập trung, nhật ký thay đổi và phân quyền theo dự án / phân hệ.</p></div></div>`;
+ let pf=document.getElementById('profileForm'),saveTimer;
+ pf.addEventListener('input',e=>{
+   if(!e.target.name)return;
+   let key=e.target.name,old=state.profile[key]||'',val=e.target.value;
+   state.profile[key]=val;persist();updateProfile();
+   auditChange('Hồ sơ cá nhân',state.user||'profile','Hồ sơ',key,old,val);
+   document.getElementById('profileSaveState').textContent='Đã tự động lưu · '+new Date().toLocaleTimeString('vi-VN');
+   clearTimeout(saveTimer);saveTimer=setTimeout(()=>persist(),250);
+ });
+ pf.onsubmit=e=>{e.preventDefault();persist();alert('Hồ sơ đã được lưu tự động.')};
+ document.getElementById('restoreFile').onchange=restoreJSON;updateLogo();
+ document.getElementById('logoUpload').onchange=e=>{setLogoFile(e.target.files[0]);e.target.value=''};
+ document.getElementById('removeLogo').onclick=()=>{state.logo='';persist();updateLogo();settings(document.getElementById('view'))};
+}
+function logoPlaceholder(id){return `<button type="button" class="logo-upload-placeholder ${id==='logoPreview'?'preview':''}" id="${id}" aria-label="Tải hoặc thay đổi logo"><span>＋</span><small>Tải logo</small></button>`}
+function updateLogo(){
+ ['sideLogo','authLogo','logoPreview'].forEach(id=>{
+   let el=document.getElementById(id);if(!el)return;
+   if(state.logo)el.outerHTML=`<img id="${id}" class="logo-img ${id==='logoPreview'?'preview':''}" src="${state.logo}" alt="Logo bệnh viện" title="Nhấn để thay đổi logo">`;
+   else el.outerHTML=logoPlaceholder(id);
+   let node=document.getElementById(id);
+   if(node)node.onclick=()=>{if(localStorage.getItem('nsg_auth'))go('dashboard')};
+ });
+}
+function setLogoFile(file){
+ if(!file)return;
+ if(!/^image\/(png|jpeg|webp)$/.test(file.type)){alert('Vui lòng chọn ảnh PNG, JPG hoặc WebP.');return}
+ let reader=new FileReader();
+ reader.onload=()=>{
+  let image=new Image();
+  image.onload=()=>{
+   if(image.width!==image.height){alert('Logo cần là ảnh vuông. Vui lòng chọn ảnh có chiều rộng bằng chiều cao.');return}
+   let canvas=document.createElement('canvas'),size=Math.min(512,image.width);
+   canvas.width=size;canvas.height=size;
+   canvas.getContext('2d').drawImage(image,0,0,size,size);
+   state.logo=canvas.toDataURL('image/png');
+   try{persist();updateLogo();if(state.view==='settings')settings(document.getElementById('view'))}
+   catch(err){alert('Không thể lưu logo. Vui lòng chọn ảnh có dung lượng nhỏ hơn.')}
+  };
+  image.onerror=()=>alert('Không thể đọc ảnh logo. Vui lòng thử tệp khác.');
+  image.src=reader.result;
+ };
+ reader.readAsDataURL(file);
+}
+
+function updateProfile(){let p=state.profile;let name=p.name||state.user||'Chưa cập nhật họ tên';document.getElementById('topUsername').textContent=name;document.getElementById('topRole').textContent=[p.job,p.department].filter(Boolean).join(' · ')||'Chưa cập nhật chức vụ / phòng ban';document.getElementById('avatar').textContent=name.trim().charAt(0).toUpperCase()}
+function downloadBlob(content,name,type){let blob=new Blob(['\ufeff',content],{type}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href)}
+function downloadCSV(k){let m=modules[k],data=rows(k),headers=m.fields.map(f=>f[1]),keys=m.fields.map(f=>f[0]),matrix=[headers,...data.map(o=>keys.map(key=>o[key]??''))];if(window.XLSX){let wb=XLSX.utils.book_new(),ws=XLSX.utils.aoa_to_sheet(matrix);XLSX.utils.book_append_sheet(wb,ws,k.slice(0,31));XLSX.writeFile(wb,'NSG_'+k+'_'+dateKeyLocal(new Date())+'.xlsx')}else{let csv=matrix.map(r=>r.map(x=>'"'+String(x).replaceAll('"','""')+'"').join(',')).join('\r\n');downloadBlob(csv,'NSG_'+k+'_'+dateKeyLocal(new Date())+'.csv','text/csv;charset=utf-8')}}
+function parseCSV(text){let rows=[],row=[],cell='',q=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'&&q&&n==='"'){cell+='"';i++}else if(c==='"')q=!q;else if(c===','&&!q){row.push(cell);cell=''}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&n==='\n')i++;row.push(cell);if(row.some(x=>x!==''))rows.push(row);row=[];cell=''}else cell+=c}row.push(cell);if(row.some(x=>x!==''))rows.push(row);return rows}
+document.getElementById('excelFile').onchange=async e=>{let file=e.target.files[0],k=e.target.dataset.module;if(!file)return;let m=modules[k],parsed;if(/\.xlsx?$|\.xls$/i.test(file.name)){if(!window.XLSX){alert('Không tải được thư viện Excel. Hãy thử lại khi có kết nối internet hoặc nhập CSV UTF-8.');e.target.value='';return}let buf=await file.arrayBuffer(),wb=XLSX.read(buf,{type:'array'}),sheet=wb.Sheets[wb.SheetNames[0]];parsed=XLSX.utils.sheet_to_json(sheet,{header:1,defval:''})}else{parsed=parseCSV(await file.text())}let head=(parsed.shift()||[]).map(x=>String(x).trim().toLowerCase()),map=m.fields.map(f=>head.indexOf(f[1].toLowerCase())>=0?head.indexOf(f[1].toLowerCase()):head.indexOf(f[0].toLowerCase()));let added=0;parsed.forEach(r=>{let o={id:k+'_'+Date.now()+'_'+Math.random().toString(16).slice(2)};m.fields.forEach((f,i)=>o[f[0]]=map[i]>=0?r[map[i]]||'':'');if(m.fields.some(f=>o[f[0]])) {rows(k).push(o);added++}});persist();log('Nhập '+added+' dòng vào '+m.title);render();alert('Đã nhập '+added+' dòng. Vui lòng kiểm tra lại dữ liệu.');e.target.value=''};
+function backupJSON(){downloadBlob(JSON.stringify({data:state.data,logs:state.logs,history:state.history,shares:state.shares,profile:state.profile,logo:state.logo},null,2),'NSG_PR_Branding_backup.json','application/json')}
+function restoreJSON(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);state.data=x.data||{};if(state.data.content){state.data.content=state.data.content.map(o=>({...o,productionStatus:o.productionStatus||'Chưa thực hiện',pageViews:o.pageViews??o.specialPageViews??0,contentViews:o.contentViews??0,bannerCTR:o.bannerCTR??o.specialPageCTR??0,bannerViews:o.bannerViews??o.bannerImpressions??0}));}if(state.data.output&&(!state.data.content||!state.data.content.length)){state.data.content=state.data.output.map(o=>({...o,productionStatus:'Hoàn tất',status:o.status||'Đã đăng',pageViews:o.specialPageViews||0,contentViews:o.contentViews||0,bannerCTR:o.bannerCTR||0,bannerViews:o.bannerViews||o.specialPageImpressions||0}));}state.logs=x.logs||[];state.history=x.history||[];state.shares=x.shares||[];state.profile=x.profile||{};state.logo=x.logo||'';persist();updateLogo();render();alert('Đã khôi phục dữ liệu.')}catch(err){alert('File JSON không hợp lệ.')}};r.readAsText(f)}
+function logout(){state.user=null;localStorage.removeItem('nsg_session');document.getElementById('app').style.display='none';document.getElementById('auth').style.display='grid';document.getElementById('loginPass').value=''}
+function login(){let u=document.getElementById('loginUser').value.trim().toLowerCase(),p=document.getElementById('loginPass').value;let account=JSON.parse(localStorage.getItem('nsg_auth')||'null');if(!account){alert('Chưa có tài khoản. Vui lòng thiết lập tài khoản quản trị trước.');return}if(u!==account.user||p!==account.pass){alert('Email/tên đăng nhập hoặc mật khẩu chưa chính xác.');return}state.user=u;localStorage.setItem('nsg_session',u);read();state.view='dashboard';document.getElementById('auth').style.display='none';document.getElementById('app').style.display='block';nav();updateProfile();render()}
+document.getElementById('globalLogoUpload').onchange=e=>{setLogoFile(e.target.files[0]);e.target.value=''};
+document.getElementById('loginBtn').onclick=login;document.getElementById('loginPass').onkeydown=e=>{if(e.key==='Enter')login()};document.getElementById('setupLink').onclick=e=>{e.preventDefault();document.getElementById('loginPane').classList.add('hidden');document.getElementById('setupPane').classList.remove('hidden')};document.getElementById('backLogin').onclick=e=>{e.preventDefault();document.getElementById('setupPane').classList.add('hidden');document.getElementById('loginPane').classList.remove('hidden')};document.getElementById('createAdmin').onclick=()=>{let u=document.getElementById('newUser').value.trim().toLowerCase(),p=document.getElementById('newPass').value,p2=document.getElementById('newPass2').value;if(!u||p.length<8||p!==p2){alert('Vui lòng nhập email/tên đăng nhập và mật khẩu tối thiểu 8 ký tự, xác nhận chính xác.');return}if(localStorage.getItem('nsg_auth')){alert('Thiết bị này đã có tài khoản quản trị.');return}localStorage.setItem('nsg_auth',JSON.stringify({user:u,pass:p}));alert('Đã tạo tài khoản demo. Bạn có thể đăng nhập.');document.getElementById('backLogin').click();document.getElementById('loginUser').value=u};document.getElementById('modalClose').onclick=closeModal;document.getElementById('modal').onclick=e=>{if(e.target.id==='modal')closeModal()};document.getElementById('profileBtn').onclick=()=>go('settings');document.getElementById('menuBtn').onclick=()=>{document.getElementById('sidebar').classList.toggle('open');document.getElementById('mobileScrim').style.display=document.getElementById('sidebar').classList.contains('open')?'block':'none'};document.getElementById('mobileScrim').onclick=()=>{document.getElementById('sidebar').classList.remove('open');document.getElementById('mobileScrim').style.display='none'};document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('sidebar').classList.remove('open');document.getElementById('mobileScrim').style.display='none'}});document.getElementById('quickExport').onclick=backupJSON;
+read();updateLogo();
+let savedSession=localStorage.getItem('nsg_session'),savedAccount=JSON.parse(localStorage.getItem('nsg_auth')||'null');
+if(savedSession&&savedAccount&&savedSession===savedAccount.user){state.user=savedSession;document.getElementById('auth').style.display='none';document.getElementById('app').style.display='block';state.view='dashboard';nav();updateProfile();render()}
+else{document.getElementById('auth').style.display='grid';document.getElementById('app').style.display='none'}
+document.getElementById('profileBtn').onclick=()=>go('settings');
+['sideLogo'].forEach(id=>{let el=document.getElementById(id);if(el){el.title='Về trang chủ';el.onclick=()=>go('dashboard')}});
+document.getElementById('topTitle').onclick=()=>go('dashboard');
+if(localStorage.getItem('nsg_auth'))document.getElementById('setupLink').textContent='Tài khoản đã được thiết lập trên thiết bị này';
+</script></body></html>
